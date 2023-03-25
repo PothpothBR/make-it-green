@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+uid="uid://c0g74vo0wryev"
+path="res://.godot/imported/garbage bag small 2.png-8a9fce11b10b529158803a36c14cdaaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/Lixo/garbage bag small 2.png"
+dest_files=["res://.godot/imported/garbage bag small 2.png-8a9fce11b10b529158803a36c14cdaaa.ctex"]
 
 [params]
 

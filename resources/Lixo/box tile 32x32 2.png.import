@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+uid="uid://wfqneiqmx0js"
+path="res://.godot/imported/box tile 32x32 2.png-fcb4c35660385c3dfe1afe4a6eaed7a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/Lixo/box tile 32x32 2.png"
+dest_files=["res://.godot/imported/box tile 32x32 2.png-fcb4c35660385c3dfe1afe4a6eaed7a1.ctex"]
 
 [params]
 

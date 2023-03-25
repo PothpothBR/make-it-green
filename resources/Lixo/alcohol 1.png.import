@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+uid="uid://cmd3o3xjoamdp"
+path="res://.godot/imported/alcohol 1.png-50922cf958fe030be54422d5d1a38f96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/Lixo/alcohol 1.png"
+dest_files=["res://.godot/imported/alcohol 1.png-50922cf958fe030be54422d5d1a38f96.ctex"]
 
 [params]
 

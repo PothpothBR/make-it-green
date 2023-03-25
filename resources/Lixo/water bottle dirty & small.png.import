@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+uid="uid://bxvhtcdbv3qmp"
+path="res://.godot/imported/water bottle dirty & small.png-dbb48caf6e84290545d019801ae1552e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/Lixo/water bottle dirty & small.png"
+dest_files=["res://.godot/imported/water bottle dirty & small.png-dbb48caf6e84290545d019801ae1552e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+uid="uid://d12lady6thgx0"
+path="res://.godot/imported/screen 3.png-e828b64642b61179c481da2a07a613cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/Lixo/screen 3.png"
+dest_files=["res://.godot/imported/screen 3.png-e828b64642b61179c481da2a07a613cb.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+uid="uid://fdnu54jddldt"
+path="res://.godot/imported/rotting food 2.png-92ca2cba88c4ff07ce0fb86c3698efe0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/Lixo/rotting food 2.png"
+dest_files=["res://.godot/imported/rotting food 2.png-92ca2cba88c4ff07ce0fb86c3698efe0.ctex"]
 
 [params]
 
