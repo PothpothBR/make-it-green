@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://pamcxw6faoqp"]
+
+[ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
+[ext_resource type="PackedScene" uid="uid://kiugewhcmaft" path="res://cena_principal.tscn" id="2_655fd"]
+
+[node name="Raiz" type="Node"]
+script = ExtResource("1_s73g7")
+
+[node name="Cena Principal" parent="." instance=ExtResource("2_655fd")]
