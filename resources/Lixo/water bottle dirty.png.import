@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wgmbqos2ohng"
-path="res://.godot/imported/water bottle dirty.png-a791c2d8a7422c862d87679987a79fe6.ctex"
+path="res://.godot/imported/water bottle dirty.png-46adac6545971e5114e6c05a560be716.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/lixo/water bottle dirty.png"
-dest_files=["res://.godot/imported/water bottle dirty.png-a791c2d8a7422c862d87679987a79fe6.ctex"]
+source_file="res://resources/Lixo/water bottle dirty.png"
+dest_files=["res://.godot/imported/water bottle dirty.png-46adac6545971e5114e6c05a560be716.ctex"]
 
 [params]
 
