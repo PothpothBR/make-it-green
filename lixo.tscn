@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cynuhdl7bt1y4"]
 
 [ext_resource type="Script" path="res://Lixo.gd" id="1_4y11w"]
-[ext_resource type="Texture2D" uid="uid://bh54ifpj7v8od" path="res://resources/Lixo/box tile 32x32 5.png" id="2_kdfa4"]
+[ext_resource type="Texture2D" uid="uid://dh40hirwn8xqd" path="res://resources/spritesheet-lixo.png" id="2_en1g7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b736"]
 size = Vector2(32, 32)
@@ -16,7 +16,9 @@ script = ExtResource("1_4y11w")
 position = Vector2(16, 16)
 
 [node name="Sprite" type="Sprite2D" parent="Corpo"]
-texture = ExtResource("2_kdfa4")
+texture = ExtResource("2_en1g7")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Colisao" type="CollisionShape2D" parent="Corpo"]
 shape = SubResource("RectangleShape2D_8b736")

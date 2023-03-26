@@ -273,21 +273,16 @@ const lixo_refs = [{
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	self.scale = Vector2(randf_range(1-modEscala, 1+modEscala), randf_range(1-modEscala, 1+modEscala))
-	self.rotation = randf_range(0, 359)
-	
-	# dummy falso, remova após as alterações
 	var texturaLixo: CompressedTexture2D
+
+	spriteLixo.set_texture(load("res://resources/spritesheet-lixo.png"))
+	spriteLixo.set_region_rect(Rect2(32*randi_range(0, 36), 0, 32, 32))
 	
-	# substituir texturaLixo pela variavel da textura escolhida
-	spriteLixo.texture = texturaLixo
+	spriteLixo.set_scale(Vector2(randf_range(1-modEscala, 1+modEscala), randf_range(1-modEscala, 1+modEscala)))
+	spriteLixo.set_rotation(randf_range(0, 359))
 	
-	spriteLixo.scale = Vector2(randf_range(1-modEscala, 1+modEscala), randf_range(1-modEscala, 1+modEscala))
-	spriteLixo.rotation = randf_range(0, 359)
-	
-	spriteLixo.flip_h = randi_range(0,1)
-	spriteLixo.flip_v = randi_range(0,1)
+	spriteLixo.set_flip_h(randi_range(0,1))
+	spriteLixo.set_flip_v(randi_range(0,1))
 	
 #	temporizador.connect("timeout", executarDegradacao.bind(temporizador))
 #	temporizador.set_wait_time(tempoDegradacao)
