@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fdnu54jddldt"
-path="res://.godot/imported/rotting food 2.png-7931f6eb678b5ec9a525f6cb61169486.ctex"
+path="res://.godot/imported/rotting food 2.png-92ca2cba88c4ff07ce0fb86c3698efe0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/lixo/rotting food 2.png"
-dest_files=["res://.godot/imported/rotting food 2.png-7931f6eb678b5ec9a525f6cb61169486.ctex"]
+source_file="res://resources/Lixo/rotting food 2.png"
+dest_files=["res://.godot/imported/rotting food 2.png-92ca2cba88c4ff07ce0fb86c3698efe0.ctex"]
 
 [params]
 

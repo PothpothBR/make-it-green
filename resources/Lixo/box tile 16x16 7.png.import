@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mtv1qm7dcaes"
-path="res://.godot/imported/box tile 16x16 7.png-1fc699e5863e98b00a67be4879967654.ctex"
+path="res://.godot/imported/box tile 16x16 7.png-431744e02c8a0cf6a937b4be01793b24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/lixo/box tile 16x16 7.png"
-dest_files=["res://.godot/imported/box tile 16x16 7.png-1fc699e5863e98b00a67be4879967654.ctex"]
+source_file="res://resources/Lixo/box tile 16x16 7.png"
+dest_files=["res://.godot/imported/box tile 16x16 7.png-431744e02c8a0cf6a937b4be01793b24.ctex"]
 
 [params]
 

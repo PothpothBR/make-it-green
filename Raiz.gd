@@ -15,7 +15,7 @@ func _ready():
 	
 	for i in range(contagemLixo):
 		var lixo = CenaLixo.instantiate()
-		
+
 		lixo.position = Vector2(
 			randf_range(geracaoLixoPadding, window_size[0]-geracaoLixoPadding),
 			randf_range(geracaoLixoPadding, window_size[1]-geracaoLixoPadding)

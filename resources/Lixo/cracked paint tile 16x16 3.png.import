@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gqald7cnrgoj"
-path="res://.godot/imported/cracked paint tile 16x16 3.png-da1ecb8d0d91d4ef27913a8d272c7fbe.ctex"
+path="res://.godot/imported/cracked paint tile 16x16 3.png-1ae21e676a8345950d584eaf782c8a63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/lixo/cracked paint tile 16x16 3.png"
-dest_files=["res://.godot/imported/cracked paint tile 16x16 3.png-da1ecb8d0d91d4ef27913a8d272c7fbe.ctex"]
+source_file="res://resources/Lixo/cracked paint tile 16x16 3.png"
+dest_files=["res://.godot/imported/cracked paint tile 16x16 3.png-1ae21e676a8345950d584eaf782c8a63.ctex"]
 
 [params]
 

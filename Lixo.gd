@@ -287,7 +287,7 @@ func _ready():
 	spriteLixo.rotation = randf_range(0, 359)
 	
 	spriteLixo.flip_h = randi_range(0,1)
-	spriteLixo.flip_w = randi_range(0,1)
+	spriteLixo.flip_v = randi_range(0,1)
 	
 	temporizador.connect("timeout", executarDegradacao.bind(temporizador))
 	temporizador.set_wait_time(tempoDegradacao)
