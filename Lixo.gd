@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var temporizador: Timer = get_node("Timer")
+@onready var spriteLixo: Sprite2D = get_node("Corpo/Sprite")
 
 @export var tempoDeVida: float = 3
 @export var degradacao: float = 1
@@ -275,6 +276,18 @@ func _ready():
 	
 	self.scale = Vector2(randf_range(1-modEscala, 1+modEscala), randf_range(1-modEscala, 1+modEscala))
 	self.rotation = randf_range(0, 359)
+	
+	# dummy falso, remova após as alterações
+	var texturaLixo: CompressedTexture2D
+	
+	# substituir texturaLixo pela variavel da textura escolhida
+	spriteLixo.texture = texturaLixo
+	
+	spriteLixo.scale = Vector2(randf_range(1-modEscala, 1+modEscala), randf_range(1-modEscala, 1+modEscala))
+	spriteLixo.rotation = randf_range(0, 359)
+	
+	spriteLixo.flip_h = randi_range(0,1)
+	spriteLixo.flip_w = randi_range(0,1)
 	
 	temporizador.connect("timeout", executarDegradacao.bind(temporizador))
 	temporizador.set_wait_time(tempoDegradacao)

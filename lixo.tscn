@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0e76jdmys0dw"]
 
 [ext_resource type="Script" path="res://Lixo.gd" id="1_4y11w"]
-[ext_resource type="Texture2D" uid="uid://bh54ifpj7v8od" path="res://resources/Lixo/box tile 32x32 5.png" id="2_kdfa4"]
+[ext_resource type="Texture2D" uid="uid://bh54ifpj7v8od" path="res://resources/lixo/box tile 32x32 5.png" id="2_kdfa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b736"]
 size = Vector2(32, 32)
