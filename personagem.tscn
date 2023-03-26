@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dvlweejf5trdf"]
+[gd_scene load_steps=40 format=3 uid="uid://dvlweejf5trdf"]
 
 [ext_resource type="Script" path="res://Personagem.gd" id="1_08jtd"]
 [ext_resource type="Texture2D" uid="uid://cwd5naksclntu" path="res://resources/character.png" id="2_486j0"]
@@ -267,6 +267,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi3bd"]
 size = Vector2(21, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvndx"]
+size = Vector2(25, 15)
+
 [node name="Personagem" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_08jtd")
@@ -279,5 +282,16 @@ animation = &"Baixo"
 position_smoothing_enabled = true
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 17.5)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_bi3bd")
+
+[node name="AreaInteracao" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="ColisaoInteracao" type="CollisionShape2D" parent="AreaInteracao"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_gvndx")
+disabled = true
+
+[connection signal="area_entered" from="AreaInteracao" to="." method="areaDentro"]

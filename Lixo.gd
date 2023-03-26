@@ -289,15 +289,18 @@ func _ready():
 	spriteLixo.flip_h = randi_range(0,1)
 	spriteLixo.flip_v = randi_range(0,1)
 	
-	temporizador.connect("timeout", executarDegradacao.bind(temporizador))
-	temporizador.set_wait_time(tempoDegradacao)
-	temporizador.start()
+#	temporizador.connect("timeout", executarDegradacao.bind(temporizador))
+#	temporizador.set_wait_time(tempoDegradacao)
+#	temporizador.start()
+
+func _physics_process(delta):
+	executarDegradacao(temporizador)
 
 func executarDegradacao(_timer):
-	tempoDeVida -= degradacao
+#	tempoDeVida -= degradacao
 	if tempoDeVida <= 0:
-		pass
-		# queue_free()
+#		pass
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
