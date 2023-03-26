@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://boeqjmmq8g3mm"]
 
-[ext_resource type="TileSet" uid="uid://d4ibkmy5fd0y4" path="res://tileset_naturesa.tres" id="1_wwa3b"]
+[ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_wwa3b"]
 
 [node name="cena_del_lucas" type="Node2D"]
 

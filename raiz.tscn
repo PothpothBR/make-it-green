@@ -10,6 +10,5 @@ script = ExtResource("1_s73g7")
 [node name="cena_del_lucas" parent="." instance=ExtResource("2_101hp")]
 
 [node name="Personagem" parent="." instance=ExtResource("3_egu52")]
-z_index = 2
 z_as_relative = false
 position = Vector2(284, 249)
