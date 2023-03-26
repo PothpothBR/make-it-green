@@ -9,15 +9,195 @@ extends Node2D
 const modEscala: float = .4
 
 const lixo_refs = [{ 	
-	"name": "caixa",
+	"name": "caixa 1",
 	"ref": "res://resources/Lixo/box 1.png",
 	"colide": true,
-	"peso": 1
-}, {
-	"name": "garrafa",
+	"peso": 24
+},{ 	
+	"name": "caixa 2",
+	"ref": "res://resources/Lixo/box 2.png",
+	"colide": true,
+	"peso": 22
+},{ 	
+	"name": "caixa 3",
+	"ref": "res://resources/Lixo/box 3.png",
+	"colide": true,
+	"peso": 24
+},{ 	
+	"name": "caixa 4",
+	"ref": "res://resources/Lixo/box tile 16x16 3.png",
+	"colide": true,
+	"peso": 22
+},{ 	
+	"name": "caixa 5",
+	"ref": "res://resources/Lixo/box tile 16x16 4.png",
+	"colide": true,
+	"peso": 20
+},{ 	
+	"name": "caixa 6",
+	"ref": "res://resources/Lixo/box tile 16x16 5.png",
+	"colide": true,
+	"peso": 21
+},{ 	
+	"name": "caixa fragil",
+	"ref": "res://resources/Lixo/box tile 16x16 1.png",
+	"colide": true,
+	"peso": 25
+},{ 	
+	"name": "caixa reciclavel",
+	"ref": "res://resources/Lixo/box tile 16x16 2.png",
+	"colide": true,
+	"peso": 28
+},{ 	
+	"name": "caixa velha 1",
+	"ref": "res://resources/Lixo/cracked paint tile 16x16 2.png",
+	"colide": true,
+	"peso": 20
+},{ 	
+	"name": "caixa velha 2",
+	"ref": "res://resources/Lixo/cracked paint tile 16x16 3.png",
+	"colide": true,
+	"peso": 21
+},{ 	
+	"name": "computador 1",
+	"ref": "res://resources/Lixo/computer 1.png",
+	"colide": true,
+	"peso": 35
+},{ 	
+	"name": "computador 2",
+	"ref": "res://resources/Lixo/computer 2.png",
+	"colide": true,
+	"peso": 38
+},{ 	
+	"name": "secadora",
+	"ref": "res://resources/Lixo/dryer.png",
+	"colide": true,
+	"peso": 80
+},{ 	
+	"name": "sacola lixo G 1",
+	"ref": "res://resources/Lixo/garbage bag 1.png",
+	"colide": true,
+	"peso": 20
+},{ 	
+	"name": "sacola lixo G 2",
+	"ref": "res://resources/Lixo/garbage bag 2.png",
+	"colide": true,
+	"peso": 22
+},{ 	
+	"name": "sacola lixo P 1",
+	"ref": "res://resources/Lixo/garbage bag small 1.png",
+	"colide": true,
+	"peso": 15
+},{ 	
+	"name": "sacola lixo P 2",
+	"ref": "res://resources/Lixo/garbage bag small 2.png",
+	"colide": true,
+	"peso": 14
+},{ 	
+	"name": "sacola lixo P 3",
+	"ref": "res://resources/Lixo/garbage bag small 3.png",
+	"colide": true,
+	"peso": 13
+},{ 	
+	"name": "chapa metal 1",
+	"ref": "res://resources/Lixo/rusty sheet metal tile 16x16 1.png",
+	"colide": true,
+	"peso": 45
+},{ 	
+	"name": "chapa metal 2",
+	"ref": "res://resources/Lixo/rusty sheet metal tile 16x16 2.png",
+	"colide": true,
+	"peso": 48
+},{ 	
+	"name": "chapa metal azul 1",
+	"ref": "res://resources/Lixo/rusty sheet metal tile blue 16x16 1.png",
+	"colide": true,
+	"peso": 50
+},{ 	
+	"name": "chapa metal azul 2",
+	"ref": "res://resources/Lixo/rusty sheet metal tile blue 16x16 2.png",
+	"colide": true,
+	"peso": 55
+},{ 	
+	"name": "lixo satelite",
+	"ref": "res://resources/Lixo/satellite dish.png",
+	"colide": true,
+	"peso": 100
+},{ 	
+	"name": "tela 1",
+	"ref": "res://resources/Lixo/screen 1.png",
+	"colide": true,
+	"peso": 32
+},{ 	
+	"name": "tela 2",
+	"ref": "res://resources/Lixo/screen 2.png",
+	"colide": true,
+	"peso": 33
+},{ 	
+	"name": "tela 3",
+	"ref": "res://resources/Lixo/screen 3.png",
+	"colide": true,
+	"peso": 36
+},{ 	
+	"name": "lavadoura",
+	"ref": "res://resources/Lixo/washer.png",
+	"colide": true,
+	"peso": 80
+},{ 	
+	"name": "garrafa 5",
+	"ref": "res://resources/Lixo/water bottle clean.png",
+	"colide": false,
+	"peso": 8
+},{ 	
+	"name": "garrafa amassada",
+	"ref": "res://resources/Lixo/water bottle crumpled.png",
+	"colide": false,
+	"peso": 3
+},{ 	
+	"name": "garrafa suja",
+	"ref": "res://resources/Lixo/water bottle dirty.png",
+	"colide": false,
+	"peso": 10
+},{ 	
+	"name": "organico 1",
+	"ref": "res://resources/Lixo/rotting food.png",
+	"colide": false,
+	"peso": 4
+},{ 	
+	"name": "organico 2",
+	"ref": "res://resources/Lixo/rotting food 2.png",
+	"colide": false,
+	"peso": 5
+},{ 	
+	"name": "papel 1",
+	"ref": "res://resources/Lixo/crumpled paper 1.png",
+	"colide": false,
+	"peso": 6
+},{ 	
+	"name": "papel 2",
+	"ref": "res://resources/Lixo/crumpled paper 2.png",
+	"colide": false,
+	"peso": 6
+},{
+	"name": "garrafa 1",
 	"ref": "res://resources/Lixo/alcohol 1.png",
 	"colide": false,
-	"peso": 1
+	"peso": 8
+},{
+	"name": "garrafa 2",
+	"ref": "res://resources/Lixo/alcohol 2.png",
+	"colide": false,
+	"peso": 7
+},{
+	"name": "garrafa 3",
+	"ref": "res://resources/Lixo/alcohol 3.png",
+	"colide": false,
+	"peso": 7
+},{
+	"name": "garrafa 4",
+	"ref": "res://resources/Lixo/alcohol 4.png",
+	"colide": false,
+	"peso": 7
 }]
 
 # Called when the node enters the scene tree for the first time.
