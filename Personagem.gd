@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animacao = get_node("AnimatedSprite2D")
 @onready var interacao = get_node("AreaInteracao/ColisaoInteracao")
 
-func mover():
+func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
 		velocidade = 300
 		animacao.speed_scale = 2
@@ -16,32 +16,27 @@ func mover():
 	
 	if Input.is_action_pressed("ui_down"):
 		direcao.y += 1
-		interacao.position.y = 31
+		interacao.position.y = 33
 		interacao.position.x = 0
 	elif Input.is_action_pressed("ui_up"):
 		direcao.y -= 1
-		interacao.position.y = 3
+		interacao.position.y = 1
 		interacao.position.x = 0
 	
 	if Input.is_action_pressed("ui_right"):
 		direcao.x += 1
 		interacao.position.y = 17
-		interacao.position.x = 23
+		interacao.position.x = 20
 	elif Input.is_action_pressed("ui_left"):
 		direcao.x -= 1
 		interacao.position.y = 17
-		interacao.position.x = -23
+		interacao.position.x = -20
 		
 	direcao = direcao.normalized()
 	
 	velocity = direcao * velocidade
-
-func _physics_process(delta):
 	
-	interacao.disabled = true
-	if Input.is_action_just_pressed("interact"):
-		interacao.disabled = false
-	mover()
+func animar() -> void:
 	if Input.is_action_pressed("ui_right"):
 		animacao.play("Direita")
 	elif Input.is_action_pressed("ui_left"):
@@ -52,6 +47,18 @@ func _physics_process(delta):
 		animacao.play("Baixo")
 	else:
 		animacao.stop()
+
+func interagir() -> void:
+	interacao.disabled = true
+	if Input.is_action_just_pressed("interact"):
+		interacao.disabled = false
+
+func _physics_process(delta):
+	interagir()
+	
+	mover()
+	
+	animar()
 		
 	move_and_slide()
 
