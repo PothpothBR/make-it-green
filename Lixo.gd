@@ -253,6 +253,22 @@ const lixo_refs = [{
 	"ref": "res://resources/Lixo/alcohol 4.png",
 	"colide": false,
 	"peso": 7
+	"peso": 8
+},{
+	"name": "garrafa 2",
+	"ref": "res://resources/Lixo/alcohol 2.png",
+	"colide": false,
+	"peso": 7
+},{
+	"name": "garrafa 3",
+	"ref": "res://resources/Lixo/alcohol 3.png",
+	"colide": false,
+	"peso": 7
+},{
+	"name": "garrafa 4",
+	"ref": "res://resources/Lixo/alcohol 4.png",
+	"colide": false,
+	"peso": 7
 }]
 
 # Called when the node enters the scene tree for the first time.
