@@ -13,4 +13,3 @@ script = ExtResource("1_s73g7")
 z_index = 2
 z_as_relative = false
 position = Vector2(284, 249)
-velocidade = 150.0

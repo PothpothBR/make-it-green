@@ -1,26 +1,35 @@
 extends CharacterBody2D
 
-@export var velocidade: float = 300.0
-@onready var _animation_player = get_node("AnimatedSprite2D")
+@export var velocidade: float = 150
+
+@onready var animacao = get_node("AnimatedSprite2D")
 
 func mover():
-	var input_direction: Vector2 = Vector2(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"), 
-	Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
+	var direcao: Vector2 = Vector2(0,0)
+	if Input.is_action_pressed("ui_right"):
+		direcao.x += 1
+	elif Input.is_action_pressed("ui_left"):
+		direcao.x -= 1
 		
-	input_direction = input_direction.normalized()
+	if Input.is_action_pressed("ui_down"):
+		direcao.y += 1
+	elif Input.is_action_pressed("ui_up"):
+		direcao.y -= 1
+		
+	direcao = direcao.normalized()
 	
-	velocity = input_direction * velocidade
+	velocity = direcao * velocidade
 
 func _physics_process(delta):
 	mover()
 	if Input.is_action_pressed("ui_right"):
-		_animation_player.play("Direita")
+		animacao.play("Direita")
 	elif Input.is_action_pressed("ui_left"):
-		_animation_player.play("Esquerda")
+		animacao.play("Esquerda")
 	elif Input.is_action_pressed("ui_up"):
-		_animation_player.play("Cima")
+		animacao.play("Cima")
 	elif Input.is_action_pressed("ui_down"):
-		_animation_player.play("Baixo")
+		animacao.play("Baixo")
 	else:
-		_animation_player.stop()
+		animacao.stop()
 	move_and_slide()
