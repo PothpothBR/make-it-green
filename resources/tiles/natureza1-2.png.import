@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://co0ypfuoqeho1"
-path="res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"
+path="res://.godot/imported/natureza1-2.png-b764951467b6802f4b606d3144e8391a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Tiles/natureza1-2.png"
-dest_files=["res://.godot/imported/natureza1-2.png-52b7f302beb39af2b8adf63b162d76e8.ctex"]
+source_file="res://resources/tiles/natureza1-2.png"
+dest_files=["res://.godot/imported/natureza1-2.png-b764951467b6802f4b606d3144e8391a.ctex"]
 
 [params]
 

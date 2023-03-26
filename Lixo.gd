@@ -253,7 +253,6 @@ const lixo_refs = [{
 	"ref": "res://resources/Lixo/alcohol 4.png",
 	"colide": false,
 	"peso": 7
-	"peso": 8
 },{
 	"name": "garrafa 2",
 	"ref": "res://resources/Lixo/alcohol 2.png",
