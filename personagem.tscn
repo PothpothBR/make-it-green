@@ -268,7 +268,6 @@ animations = [{
 size = Vector2(21, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvndx"]
-size = Vector2(25, 15)
 
 [node name="Personagem" type="CharacterBody2D"]
 motion_mode = 1
@@ -290,7 +289,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColisaoInteracao" type="CollisionShape2D" parent="AreaInteracao"]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gvndx")
 disabled = true
 
