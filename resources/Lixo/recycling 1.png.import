@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddp1qawpminb8"
-path="res://.godot/imported/recycling 1.png-d6c89a5af97fcb48ac77c53fc5e1b5e7.ctex"
+path="res://.godot/imported/recycling 1.png-0aeb3848e67f0afbe1be9cd770776f06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Lixo/recycling 1.png"
-dest_files=["res://.godot/imported/recycling 1.png-d6c89a5af97fcb48ac77c53fc5e1b5e7.ctex"]
+source_file="res://resources/lixo/recycling 1.png"
+dest_files=["res://.godot/imported/recycling 1.png-0aeb3848e67f0afbe1be9cd770776f06.ctex"]
 
 [params]
 

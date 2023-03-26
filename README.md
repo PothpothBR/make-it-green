@@ -12,4 +12,4 @@
 - [ ] Definir Goals (João)
 - [ ] Definir final do jogo (João / Fabricio / Bruno)
 - [ ] Definir base da historia (João)
-- [ ] Modelagem de dados (Renato)
+- [x] Modelagem de dados (Renato)

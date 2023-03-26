@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmd3o3xjoamdp"
-path="res://.godot/imported/alcohol 1.png-50922cf958fe030be54422d5d1a38f96.ctex"
+path="res://.godot/imported/alcohol 1.png-1adaf82db28ee8f111a49598c7d905bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Lixo/alcohol 1.png"
-dest_files=["res://.godot/imported/alcohol 1.png-50922cf958fe030be54422d5d1a38f96.ctex"]
+source_file="res://resources/lixo/alcohol 1.png"
+dest_files=["res://.godot/imported/alcohol 1.png-1adaf82db28ee8f111a49598c7d905bb.ctex"]
 
 [params]
 

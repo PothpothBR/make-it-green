@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dos1l6q0i07qj"
-path="res://.godot/imported/screen 1.png-c45feb464895a21f9e90de60aa51f5a0.ctex"
+path="res://.godot/imported/screen 1.png-7fb90fc1252f4ba61d300d870cd3d602.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Lixo/screen 1.png"
-dest_files=["res://.godot/imported/screen 1.png-c45feb464895a21f9e90de60aa51f5a0.ctex"]
+source_file="res://resources/lixo/screen 1.png"
+dest_files=["res://.godot/imported/screen 1.png-7fb90fc1252f4ba61d300d870cd3d602.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gt072e3kva3h"
-path="res://.godot/imported/rusty sheet metal tile blue 16x16 1.png-36974aec40777c4a2f4177e010c2350a.ctex"
+path="res://.godot/imported/rusty sheet metal tile blue 16x16 1.png-20f7057e2050ff8b515e52ed1b7e344b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Lixo/rusty sheet metal tile blue 16x16 1.png"
-dest_files=["res://.godot/imported/rusty sheet metal tile blue 16x16 1.png-36974aec40777c4a2f4177e010c2350a.ctex"]
+source_file="res://resources/lixo/rusty sheet metal tile blue 16x16 1.png"
+dest_files=["res://.godot/imported/rusty sheet metal tile blue 16x16 1.png-20f7057e2050ff8b515e52ed1b7e344b.ctex"]
 
 [params]
 

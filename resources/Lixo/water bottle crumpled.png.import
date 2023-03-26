@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7l5ort4benof"
-path="res://.godot/imported/water bottle crumpled.png-04ed491048c4fe0ff9b7212282f8d6cd.ctex"
+path="res://.godot/imported/water bottle crumpled.png-6be2a5fa35a656776477ff5c97f82f62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Lixo/water bottle crumpled.png"
-dest_files=["res://.godot/imported/water bottle crumpled.png-04ed491048c4fe0ff9b7212282f8d6cd.ctex"]
+source_file="res://resources/lixo/water bottle crumpled.png"
+dest_files=["res://.godot/imported/water bottle crumpled.png-6be2a5fa35a656776477ff5c97f82f62.ctex"]
 
 [params]
 
