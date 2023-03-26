@@ -41,10 +41,10 @@ func animar() -> void:
 		animacao.play("Direita")
 	elif Input.is_action_pressed("ui_left"):
 		animacao.play("Esquerda")
-	elif Input.is_action_pressed("ui_up"):
-		animacao.play("Cima")
 	elif Input.is_action_pressed("ui_down"):
 		animacao.play("Baixo")
+	elif Input.is_action_pressed("ui_up"):
+		animacao.play("Cima")
 	else:
 		animacao.stop()
 
