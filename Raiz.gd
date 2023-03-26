@@ -11,7 +11,7 @@ func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
 	print("instanciando: ", contagemLixo, " lixo...")
 	
-	var window_size: Vector2 = get_window().size
+	var window_size: Vector2 = Vector2(3834, 2017)
 	
 	for i in range(contagemLixo):
 		var lixo = CenaLixo.instantiate()

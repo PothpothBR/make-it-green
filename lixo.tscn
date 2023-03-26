@@ -10,6 +10,7 @@ size = Vector2(32, 32)
 size = Vector2(32, 32)
 
 [node name="Lixo" type="Node2D"]
+z_index = -1
 script = ExtResource("1_4y11w")
 
 [node name="Corpo" type="StaticBody2D" parent="."]
