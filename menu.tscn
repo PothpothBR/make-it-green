@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://drvh0o8kfebw"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_8g0o4"]
+[ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="1_cc3ki"]
+[ext_resource type="FontFile" uid="uid://cqlfhfy6o5gyh" path="res://resources/Fonts/Gaharu-JR9Om.otf" id="3_ieyqo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm77x"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 0.717647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmbp3"]
+bg_color = Color(0.160784, 0.160784, 0.160784, 0.705882)
+
+[sub_resource type="Theme" id="Theme_lx4ul"]
+Label/fonts/font = null
+Label/styles/normal = SubResource("StyleBoxFlat_hm77x")
+RichTextLabel/colors/default_color = Color(0.117647, 1, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 52
+RichTextLabel/fonts/normal_font = ExtResource("3_ieyqo")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_mmbp3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0w7xj"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 0.745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuugq"]
+bg_color = Color(0, 0, 0, 0.745098)
+
+[sub_resource type="Theme" id="Theme_jda7r"]
+default_font_size = 42
+Button/styles/hover = SubResource("StyleBoxFlat_0w7xj")
+Button/styles/normal = SubResource("StyleBoxFlat_uuugq")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8g0o4")
+
+[node name="cena_demo" parent="." instance=ExtResource("1_cc3ki")]
+position = Vector2(-1920, -43)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10000
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 10000
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+z_index = 100
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_lx4ul")
+text = "Make It Green"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 100
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_jda7r")
+theme_override_font_sizes/font_size = 42
+text = "Iniciar"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="botaoIniciar"]
