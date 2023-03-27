@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_wwa3b"]
 
-[node name="cena_del_lucas" type="Node2D"]
+[node name="cena_demo" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_wwa3b")
