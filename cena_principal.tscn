@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dpogetunrwpb"]
+[gd_scene load_steps=29 format=3 uid="uid://dpogetunrwpb"]
 
 [ext_resource type="Texture2D" uid="uid://d17kqchmlydnx" path="res://resources/Tiles/anima1-0.png" id="1_kpjuy"]
 [ext_resource type="Texture2D" uid="uid://blvm03nm44u2i" path="res://resources/Tiles/anima1-1.png" id="2_1053m"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c5nxo05ynm7d6" path="res://resources/Tiles/natureza1-1.png" id="10_0q5oi"]
 [ext_resource type="Texture2D" uid="uid://co0ypfuoqeho1" path="res://resources/Tiles/natureza1-2.png" id="11_sbgk2"]
 [ext_resource type="Texture2D" uid="uid://baeu2amk7kbyg" path="res://resources/Tiles/natureza2-0.png" id="12_3d7qd"]
+[ext_resource type="PackedScene" uid="uid://cynuhdl7bt1y4" path="res://lixo.tscn" id="13_6yhv5"]
+[ext_resource type="PackedScene" uid="uid://dvlweejf5trdf" path="res://personagem.tscn" id="14_oswfb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iao40"]
 texture = ExtResource("1_kpjuy")
@@ -12439,3 +12441,9 @@ position = Vector2(287, 214)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_clldq")
+
+[node name="Lixo" parent="." instance=ExtResource("13_6yhv5")]
+position = Vector2(269, 148)
+
+[node name="Personagem" parent="." instance=ExtResource("14_oswfb")]
+position = Vector2(226, 218)

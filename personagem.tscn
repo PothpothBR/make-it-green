@@ -269,7 +269,8 @@ size = Vector2(21, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvndx"]
 
-[node name="Personagem" type="CharacterBody2D"]
+[node name="Personagem" type="CharacterBody2D" groups=["player"]]
+z_as_relative = false
 motion_mode = 1
 script = ExtResource("1_08jtd")
 

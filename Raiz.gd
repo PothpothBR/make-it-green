@@ -21,7 +21,11 @@ func _ready():
 			randf_range(geracaoLixoPadding, window_size[1]-geracaoLixoPadding)
 			)
 		add_child(lixo)
-	
+	var player = get_tree().get_nodes_in_group("player")[0]
+	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
+	player.lixoTotal = contagemLixo
+	player.lixoAtual = contagemLixo
+	objetivos.lixoTotal = contagemLixo
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

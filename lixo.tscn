@@ -1,7 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cynuhdl7bt1y4"]
+[gd_scene load_steps=7 format=3 uid="uid://cynuhdl7bt1y4"]
 
 [ext_resource type="Script" path="res://Lixo.gd" id="1_4y11w"]
 [ext_resource type="Texture2D" uid="uid://dh40hirwn8xqd" path="res://resources/spritesheet-lixo.png" id="2_en1g7"]
+[ext_resource type="Shader" path="res://lixoOutline.gdshader" id="2_hwtuc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_geeah"]
+shader = ExtResource("2_hwtuc")
+shader_parameter/color = Vector4(246, 255, 0, 1)
+shader_parameter/width = 1.8
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b736"]
 size = Vector2(32, 32)
@@ -9,7 +18,7 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x31c3"]
 size = Vector2(32, 32)
 
-[node name="Lixo" type="Node2D"]
+[node name="Lixo" type="Node2D" groups=["lixo"]]
 z_index = -1
 script = ExtResource("1_4y11w")
 
@@ -17,6 +26,8 @@ script = ExtResource("1_4y11w")
 position = Vector2(16, 16)
 
 [node name="Sprite" type="Sprite2D" parent="Corpo"]
+z_as_relative = false
+material = SubResource("ShaderMaterial_geeah")
 texture = ExtResource("2_en1g7")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)

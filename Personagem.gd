@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @onready var animacao = get_node("AnimatedSprite2D")
 @onready var interacao = get_node("AreaInteracao/ColisaoInteracao")
+var lixoTotal = 0
+var lixoAtual = 0
 
 func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
@@ -63,4 +65,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func areaDentro(area):
+	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
 	area.get_parent().get_parent().tempoDeVida = 0.0
+	lixoAtual -= 1
+	objetivos.changeText(lixoAtual)
