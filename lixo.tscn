@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cynuhdl7bt1y4"]
+[gd_scene load_steps=13 format=3 uid="uid://cynuhdl7bt1y4"]
 
 [ext_resource type="Script" path="res://Lixo.gd" id="1_4y11w"]
 [ext_resource type="Texture2D" uid="uid://dh40hirwn8xqd" path="res://resources/spritesheet-lixo.png" id="2_en1g7"]
 [ext_resource type="Shader" path="res://lixoOutline.gdshader" id="2_hwtuc"]
+[ext_resource type="Texture2D" uid="uid://h8xvh4afp80w" path="res://resources/021-Light01.png" id="4_nkjwt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_geeah"]
 shader = ExtResource("2_hwtuc")
@@ -17,6 +18,42 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x31c3"]
 size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4pm4"]
+atlas = ExtResource("4_nkjwt")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh6j1"]
+atlas = ExtResource("4_nkjwt")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmk1v"]
+atlas = ExtResource("4_nkjwt")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om0mx"]
+atlas = ExtResource("4_nkjwt")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14dlo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4pm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh6j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmk1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om0mx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Lixo" type="Node2D" groups=["lixo"]]
 z_index = -1
@@ -41,4 +78,14 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corpo/Area2D"]
 shape = SubResource("RectangleShape2D_x31c3")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Corpo"]
+z_index = 4096
+z_as_relative = false
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_14dlo")
+autoplay = "default"
+frame_progress = 0.831051
+
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="tree_exiting" from="." to="." method="lixoDestruido"]

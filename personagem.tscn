@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://dvlweejf5trdf"]
+[gd_scene load_steps=42 format=3 uid="uid://dvlweejf5trdf"]
 
 [ext_resource type="Script" path="res://Personagem.gd" id="1_08jtd"]
 [ext_resource type="Texture2D" uid="uid://cwd5naksclntu" path="res://resources/character.png" id="2_486j0"]
+[ext_resource type="Texture2D" uid="uid://c0aj3v8o8cb4h" path="res://resources/UI/arrow.png" id="3_bltlj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tn3vh"]
 atlas = ExtResource("2_486j0")
@@ -269,6 +270,9 @@ size = Vector2(21, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvndx"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwqea"]
+radius = 30.0
+
 [node name="Personagem" type="CharacterBody2D" groups=["player"]]
 z_as_relative = false
 motion_mode = 1
@@ -293,5 +297,15 @@ collision_mask = 2
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gvndx")
 disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qwqea")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(30, 0)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_bltlj")
+flip_h = true
 
 [connection signal="area_entered" from="AreaInteracao" to="." method="areaDentro"]

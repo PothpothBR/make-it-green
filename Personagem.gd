@@ -4,6 +4,11 @@ extends CharacterBody2D
 
 @onready var animacao = get_node("AnimatedSprite2D")
 @onready var interacao = get_node("AreaInteracao/ColisaoInteracao")
+@onready var circulo = get_node("CollisionShape2D")
+@onready var seta = get_node("CollisionShape2D/Sprite2D")
+@onready var p = get_node(".")
+@onready var lixoPerto: Vector2 = Vector2()
+
 var lixoTotal = 0
 var lixoAtual = 0
 
@@ -54,8 +59,32 @@ func interagir() -> void:
 	interacao.disabled = true
 	if Input.is_action_just_pressed("interact"):
 		interacao.disabled = false
+		
+func getLixoPerto() -> void:
+	var player = get_tree().get_nodes_in_group("player")[0]
+	var lixos = get_tree().get_nodes_in_group("lixo")
+	if lixos.size() != 0:
+		var minVec = lixos[0].position
+		var min = Vector2(abs(player.position.x - lixos[0].position.x), abs(player.position.y - lixos[0].position.y))
+		for i in range(1, lixos.size()):
+			var nmin = Vector2(abs(player.position.x - lixos[i].position.x), abs(player.position.y - lixos[i].position.y))
+			if nmin.length() < min.length():
+				minVec = lixos[i].position
+				min = nmin
+		player.lixoPerto = minVec
+	else:
+		seta.visible = false
 
 func _physics_process(delta):
+	
+	getLixoPerto()
+	
+	var pp: Vector2 = p.position
+	
+	circulo.rotation = pp.angle_to_point(lixoPerto)
+	
+#	print(circulo.rotation)
+	
 	interagir()
 	
 	mover()
@@ -65,7 +94,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func areaDentro(area):
-	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
 	area.get_parent().get_parent().tempoDeVida = 0.0
-	lixoAtual -= 1
-	objetivos.changeText(lixoAtual)
