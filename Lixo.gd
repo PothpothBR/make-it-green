@@ -7,6 +7,8 @@ extends Node2D
 @export var degradacao: float = 1
 @export var tempoDegradacao: float = 1
 
+var regTextura = Rect2(32*randi_range(0, 36), 0, 32, 32)
+
 const modEscala: float = .4
 
 const lixo_refs = [{ 	
@@ -276,7 +278,7 @@ func _ready():
 	var texturaLixo: CompressedTexture2D
 
 	spriteLixo.set_texture(load("res://resources/spritesheet-lixo.png"))
-	spriteLixo.set_region_rect(Rect2(32*randi_range(0, 36), 0, 32, 32))
+	spriteLixo.set_region_rect(regTextura)
 	
 	spriteLixo.set_scale(Vector2(randf_range(1-modEscala, 1+modEscala), randf_range(1-modEscala, 1+modEscala)))
 	spriteLixo.set_rotation(randf_range(0, 359))

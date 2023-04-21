@@ -12,6 +12,10 @@ extends CharacterBody2D
 var lixoTotal = 0
 var lixoAtual = 0
 
+var inventario
+
+var gameState
+
 func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
 		velocidade = 300
@@ -69,7 +73,10 @@ func getLixoPerto() -> void:
 		for i in range(1, lixos.size()):
 			var nmin = Vector2(abs(player.position.x - lixos[i].position.x), abs(player.position.y - lixos[i].position.y))
 			if nmin.length() < min.length():
+				var c = lixos[i].get_child(0).get_child(1)
 				minVec = lixos[i].position
+				minVec.x += c.shape.size.x / 2
+				minVec.y += c.shape.size.y / 2
 				min = nmin
 		player.lixoPerto = minVec
 	else:
@@ -83,6 +90,9 @@ func _physics_process(delta):
 	
 	circulo.rotation = pp.angle_to_point(lixoPerto)
 	
+	if Input.is_action_just_pressed("inventory"):
+		inventario.visible = !(inventario.visible)
+	
 #	print(circulo.rotation)
 	
 	interagir()
@@ -94,4 +104,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func areaDentro(area):
-	area.get_parent().get_parent().tempoDeVida = 0.0
+	var lixo = area.get_parent().get_parent()
+	lixo.tempoDeVida = 0.0
+	inventario.addItem(lixo)

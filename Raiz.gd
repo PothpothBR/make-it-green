@@ -6,6 +6,13 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 @export var geracaoLixoPadding: float = 100
 @export var modGeracaoLixo: int = 5
 
+@onready var inventario = get_node("Inventario")
+@onready var gameState = {
+	"pause": false,
+	"inventario": false,
+	"jogando": true
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
@@ -33,10 +40,18 @@ func _ready():
 	for i in range(1, lixos.size()):
 		var nmin = Vector2(abs(player.position.x - lixos[i].position.x), abs(player.position.y - lixos[i].position.y))
 		if nmin.length() < min.length():
+			var c = lixos[i].get_child(0).get_child(1)
 			minVec = lixos[i].position
+			minVec.x += c.shape.size.x / 2
+			minVec.y += c.shape.size.y / 2
 			min = nmin
 	player.lixoPerto = minVec
+	
+	player.inventario = inventario
+	player.gameState = gameState
+	inventario.gameState = gameState
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Engine.get_frames_per_second())
+	pass
+	#print(Engine.get_frames_per_second())
