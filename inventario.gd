@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-const CenaSprite: PackedScene = preload("res://spriteInventario.tscn")
-
 @onready var items: Array[Node2D] = []
 @onready var grid: ItemList = get_node('ItemList')
 
@@ -9,7 +7,6 @@ var gameState
 
 func _ready():
 	pass
-
 func _process(delta):
 #	for item in grid.get_children():
 #		print(item)
