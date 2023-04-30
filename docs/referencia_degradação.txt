@@ -1,0 +1,5 @@
+25% escurecer
+
+01% dissolver
+
+02% ruido monocromatico gaussiano
