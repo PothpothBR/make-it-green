@@ -14,6 +14,8 @@ var lixoAtual = 0
 
 var inventario
 
+var lixeira
+
 var gameState
 
 func mover() -> void:
@@ -92,18 +94,28 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("inventory"):
 		inventario.visible = !(inventario.visible)
+		gameState["inventario"] = !gameState["inventario"]
+		animacao.stop()
+	if Input.is_action_just_pressed("temp"):
+		lixeira.visible = !(lixeira.visible)
+		gameState["inventario"] = !gameState["inventario"]
+		animacao.stop()
 	
 #	print(circulo.rotation)
-	
-	interagir()
-	
-	mover()
-	
-	animar()
+	if !gameState["inventario"]:
+		interagir()
 		
-	move_and_slide()
+		mover()
+		
+		animar()
+			
+		move_and_slide()
 
 func areaDentro(area):
-	var lixo = area.get_parent().get_parent()
-	lixo.tempoDeVida = 0.0
-	inventario.addItem(lixo)
+	var obj = area.get_parent().get_parent()
+	if obj.tipo == "Lixo":
+		obj.tempoDeVida = 0.0
+		inventario.addItem(obj)
+	elif obj.tipo == "Lixeira":
+		obj.add(inventario)
+		inventario.clear()

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkg2gcc7rpsm7"]
+
+[ext_resource type="Script" path="res://lixeira.gd" id="1_cclcn"]
+[ext_resource type="Texture2D" uid="uid://cs1h51l7nuclo" path="res://resources/trash-can-in-pixel-art-style-vector.jpg" id="1_dyid4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i58ft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rcvq"]
+
+[node name="Lixeira" type="Node2D" groups=["lixeira"]]
+script = ExtResource("1_cclcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_i58ft")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_dyid4")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_4rcvq")

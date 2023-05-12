@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var items: Array[Node2D] = []
+@onready var items: Array[String] = []
 @onready var grid: ItemList = get_node('ItemList')
 
 var gameState
@@ -12,7 +12,7 @@ func _process(delta):
 #		print(item)
 	pass
 	
-func addItem(lixo: Node2D):
+func addItem(lixo: Node2D) -> void:
 #	print(lixo)
 #	print(lixo.regTextura)
 #	var csprite = CenaSprite.instantiate()
@@ -21,3 +21,7 @@ func addItem(lixo: Node2D):
 #	sprite.set_region_rect(lixo.regTextura)
 #	grid.add_child(csprite)
 	grid.add_item(lixo.to_string())
+	items.append(lixo.to_string())
+	
+func clear() -> void:
+	grid.clear()

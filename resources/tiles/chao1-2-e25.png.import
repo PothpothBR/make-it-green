@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7i7moajeb7k2"
-path="res://.godot/imported/chao1-2-e25.png-65009bdef6a703e371a93a3dec71f47b.ctex"
+path="res://.godot/imported/chao1-2-e25.png-db8c161095b289d0d771806579cbb860.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/tiles/chao1-2-e25.png"
-dest_files=["res://.godot/imported/chao1-2-e25.png-65009bdef6a703e371a93a3dec71f47b.ctex"]
+source_file="res://resources/Tiles/chao1-2-e25.png"
+dest_files=["res://.godot/imported/chao1-2-e25.png-db8c161095b289d0d771806579cbb860.ctex"]
 
 [params]
 
