@@ -31,10 +31,10 @@ func _ready():
 		if tile.has("depends"):
 			tile.depends = findDepend(tile.depends, data.tiles)
 	
-	WFCMap = MapBuffer.new(Vector2i(40, 40), data.tiles)
+	WFCMap = MapBuffer.new(Vector2i(180, 100), data.tiles)
 
 func _process(_delta):
-	if y >= 40: 
+	if y >= 100: 
 		return
 	
 	var pos = Vector2i(x, y)
@@ -56,7 +56,7 @@ func _process(_delta):
 		)
 	
 	x += 1
-	if x >= 40:
+	if x >= 180:
 		y += 1
 		x = 0
 	
