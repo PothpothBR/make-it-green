@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://sgyusyw3psy8"]
+
+[ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="1_6njbd"]
+[ext_resource type="PackedScene" uid="uid://caqeo1s5t2t8p" path="res://raiz.tscn" id="2_6eqgv"]
+
+[node name="cena_demo" instance=ExtResource("1_6njbd")]
+
+[node name="Raiz" parent="." index="1" instance=ExtResource("2_6eqgv")]

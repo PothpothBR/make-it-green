@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqeh5epd235vq"]
+
+[ext_resource type="Script" path="res://lixeira_front.gd" id="1_w310v"]
+
+[node name="CanvasLayer" type="CanvasLayer" groups=["front"]]
+visible = false
+script = ExtResource("1_w310v")
+
+[node name="ItemList" type="ItemList" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+same_column_width = true

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var temporizador: Timer = get_node("Timer")
 @onready var spriteLixo: Sprite2D = get_node("Corpo/Sprite")
+@onready var tipo: String = "Lixo"
 
 @export var tempoDeVida: float = 3
 @export var degradacao: float = 1

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://caqeo1s5t2t8p"]
+[gd_scene load_steps=8 format=3 uid="uid://caqeo1s5t2t8p"]
 
 [ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
 [ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="2_101hp"]
 [ext_resource type="PackedScene" uid="uid://dvlweejf5trdf" path="res://personagem.tscn" id="3_egu52"]
 [ext_resource type="PackedScene" uid="uid://cjta5n3814avc" path="res://objetivos.tscn" id="4_sjf4x"]
 [ext_resource type="PackedScene" uid="uid://cc0blbu3hv578" path="res://inventario.tscn" id="5_ap8o1"]
+[ext_resource type="PackedScene" uid="uid://dkg2gcc7rpsm7" path="res://lixeira.tscn" id="6_535so"]
+[ext_resource type="PackedScene" uid="uid://dqeh5epd235vq" path="res://lixeira_front.tscn" id="7_jvxgt"]
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
@@ -19,3 +21,9 @@ position = Vector2(284, 249)
 
 [node name="Inventario" parent="." instance=ExtResource("5_ap8o1")]
 visible = false
+
+[node name="Lixeira" parent="." instance=ExtResource("6_535so")]
+position = Vector2(416, 317)
+scale = Vector2(2, 2)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_jvxgt")]
