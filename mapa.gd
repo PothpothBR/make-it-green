@@ -5,65 +5,22 @@ var debug: bool = true
 
 @onready var map: TileMap = get_node("TileMap")
 
+var x = 0
+var y = 0
+var WFCMap
+
 func loadData():
 	var file: FileAccess = FileAccess.open("res://data/tiles.json", FileAccess.READ)
 	var data: Dictionary = JSON.parse_string(file.get_as_text())
 	file.close()
 	return data
-	
-func findModel(id: int, models: Array):
-	for model in models:
-		if model.id == id:
-			return model
-	print("Modelo para o id", id, "nao existe")
 
-func calcPairEntropy(targetBind, touchBind, tiles):
-	pass
-
-func calcEntropy(upBinds, downBinds, leftBinds, rightBinds, globalBinds, tiles: Array):
-	if upBinds: pass
-		# calcPairEntropy(upBinds.down, )
-	if downBinds: pass
-	if leftBinds: pass
-	if rightBinds: pass
-	if globalBinds: pass
+func findDepend(index, tiles):
+	for depend in tiles:
+		if depend.index[0] == index[0] && depend.index[1] == index[1]:
+			return depend
+	print("Dependencia para o index", index, "nao existe")
 	
-	return tiles.pick_random()
-	
-
-func generateTerrain(tiles: Array, size: Vector2i):
-	var buffer: Array = []
-	
-	for y in range(size[1]):
-		var line: Array = []
-		buffer.append(line)
-		for x in range(size[0]):
-			# 1* eu assumo que todos as celulas podem conter qualquer tile
-			# 2* pego a proxima posição
-			# 3* calculo a entropia da celula
-			#     3.1* olho em todas as celulas em volta da celula
-			#     3.2* para cada uma reduzo a possibilidade de escolha da celula
-			#     3.3* se a celula não existir nada é reduzido (pois todas as escolhas são posiveis)
-			# 4* escolho um tile aleatório (restringido pelo universo de possibilidades)
-			# 5* salvo o tile escolhido na celula
-			# 6* volto a etapa 2* até acabarem as ceulas
-			# 7* salvo a ultima celula
-			var up = null
-			var down = null
-			var left = null
-			var right = null
-			var global = null
-			if y > 0: up = buffer[y-1][x].binds
-			if y < size[1]: down = null
-			if x > 0: left = buffer[y][x-1].binds
-			if x < size[0]: right = null
-			
-			var possibilities = calcEntropy(up, down, left, right, global, tiles)
-			
-			#map.set_cell(tile.layer, Vector2i(x, y), tile.source, Vector2i(tile.index[0], tile.index[1]))
-			line.append(possibilities)
-			pass
-
 func _ready():
 	var data: Dictionary = loadData()
 	
@@ -71,11 +28,35 @@ func _ready():
 		map.add_layer(layer)
 		
 	for tile in data.tiles:
-		tile.binds = findModel(tile.inherit, data.models)
+		if tile.has("depends"):
+			tile.depends = findDepend(tile.depends, data.tiles)
 	
-	generateTerrain(data.tiles, Vector2i(4, 4))
-	
-	map.set_cell(0, Vector2i(0, 0), 3, Vector2i(0, 1))
+	WFCMap = MapBuffer.new(Vector2i(40, 40), data.tiles)
 
 func _process(_delta):
-	pass
+	if y >= 40: 
+		return
+	
+	var pos = Vector2i(x, y)
+	var local = WFCMap.collapse(pos)
+	
+	map.set_cell(
+		local.layer,
+		pos,
+		local.source,
+		Vector2i(local.index[0], local.index[1])
+	)
+	
+	if local.has("depends"):
+		map.set_cell(
+			local.depends.layer,
+			pos,
+			local.depends.source,
+			Vector2i(local.depends.index[0], local.depends.index[1])
+		)
+	
+	x += 1
+	if x >= 40:
+		y += 1
+		x = 0
+	

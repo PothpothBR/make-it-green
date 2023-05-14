@@ -12,4 +12,7 @@ texture_repeat = 1
 tile_set = ExtResource("1_0oyba")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 4, 1, 1, 12, 1, 2, 13, 1, 65538, 65549, 0, 65537, 65548, 0, 65536, 65540, 0, 131072, 65540, 2, 131073, 65548, 2, 131074, 65549, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 321)
+scale = Vector2(0.2, 0.2)
