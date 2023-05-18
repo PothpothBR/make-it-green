@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var seta = get_node("CollisionShape2D/Sprite2D")
 @onready var p = get_node(".")
 @onready var lixoPerto: Vector2 = Vector2()
+@onready var pontos: int = 0
 
 var lixoTotal = 0
 var lixoAtual = 0
@@ -97,8 +98,6 @@ func _physics_process(delta):
 		gameState["inventario"] = !gameState["inventario"]
 		animacao.stop()
 	if Input.is_action_just_pressed("temp"):
-		lixeira.visible = !(lixeira.visible)
-		gameState["inventario"] = !gameState["inventario"]
 		animacao.stop()
 	
 #	print(circulo.rotation)
@@ -110,12 +109,15 @@ func _physics_process(delta):
 		animar()
 			
 		move_and_slide()
+		
 
 func areaDentro(area):
 	var obj = area.get_parent().get_parent()
 	if obj.tipo == "Lixo":
 		obj.tempoDeVida = 0.0
 		inventario.addItem(obj)
+		pontos += 1
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()
+	print(pontos)

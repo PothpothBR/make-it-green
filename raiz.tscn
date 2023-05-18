@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjta5n3814avc" path="res://objetivos.tscn" id="4_sjf4x"]
 [ext_resource type="PackedScene" uid="uid://cc0blbu3hv578" path="res://inventario.tscn" id="5_ap8o1"]
 [ext_resource type="PackedScene" uid="uid://dkg2gcc7rpsm7" path="res://lixeira.tscn" id="6_535so"]
-[ext_resource type="PackedScene" uid="uid://dqeh5epd235vq" path="res://lixeira_front.tscn" id="7_jvxgt"]
+[ext_resource type="PackedScene" uid="uid://dgq0p3xrufq77" path="res://loja.tscn" id="7_gawtd"]
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
@@ -26,4 +26,4 @@ visible = false
 position = Vector2(416, 317)
 scale = Vector2(2, 2)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("7_jvxgt")]
+[node name="Loja" parent="." instance=ExtResource("7_gawtd")]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgq0p3xrufq77"]
+
+[ext_resource type="Script" path="res://loja.gd" id="1_qlom6"]
+
+[node name="Loja" type="CanvasLayer" groups=["menu_interativo"]]
+script = ExtResource("1_qlom6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items de Plantação" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Semente de Arvore" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Semente de Arbusto" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Regador" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fertilizante" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mochilas" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Mochila 1" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mochila 2" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mochila 3" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mochila 4" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
+layout_mode = 2
+size_flags_horizontal = 3

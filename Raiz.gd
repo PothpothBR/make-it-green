@@ -47,15 +47,16 @@ func _ready():
 			min = nmin
 	player.lixoPerto = minVec
 	
-	var front = get_tree().get_nodes_in_group("front")[0]
-	var lixeiras = get_tree().get_nodes_in_group("lixeira")
+	var interativo = get_tree().get_nodes_in_group("menu_interativo")
+	var lixeira = get_tree().get_nodes_in_group("lixeira")
 	
-	for i in range(lixeiras.size()):
-		lixeiras[i].front = front
+	for i in interativo:
+		i.gameState = gameState
+	for i in lixeira:
+		i.personagem = player
 	
 	player.inventario = inventario
 	player.gameState = gameState
-	player.lixeira = front
 	inventario.gameState = gameState
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
