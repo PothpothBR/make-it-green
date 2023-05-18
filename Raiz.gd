@@ -55,8 +55,11 @@ func _ready():
 	for i in lixeira:
 		i.personagem = player
 	
+	var pontos = get_node("HUD/Pontos")
+	
 	player.inventario = inventario
 	player.gameState = gameState
+	player.frontPontos = pontos
 	inventario.gameState = gameState
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

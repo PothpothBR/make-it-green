@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://caqeo1s5t2t8p"]
+[gd_scene load_steps=9 format=3 uid="uid://caqeo1s5t2t8p"]
 
 [ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
 [ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="2_101hp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cc0blbu3hv578" path="res://inventario.tscn" id="5_ap8o1"]
 [ext_resource type="PackedScene" uid="uid://dkg2gcc7rpsm7" path="res://lixeira.tscn" id="6_535so"]
 [ext_resource type="PackedScene" uid="uid://dgq0p3xrufq77" path="res://loja.tscn" id="7_gawtd"]
+[ext_resource type="PackedScene" uid="uid://dcc5m2tpyo24k" path="res://hud.tscn" id="8_is312"]
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
@@ -27,3 +28,5 @@ position = Vector2(416, 317)
 scale = Vector2(2, 2)
 
 [node name="Loja" parent="." instance=ExtResource("7_gawtd")]
+
+[node name="HUD" parent="." instance=ExtResource("8_is312")]
