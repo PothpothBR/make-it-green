@@ -25,3 +25,4 @@ func addItem(lixo: Node2D) -> void:
 	
 func clear() -> void:
 	grid.clear()
+	items.clear()
