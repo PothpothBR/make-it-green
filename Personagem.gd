@@ -19,6 +19,8 @@ var lixeira
 
 var gameState
 
+var frontPontos
+
 func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
 		velocidade = 300
@@ -120,4 +122,4 @@ func areaDentro(area):
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()
-	print(pontos)
+	frontPontos.update(pontos)
