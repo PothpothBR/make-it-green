@@ -21,6 +21,8 @@ var gameState
 
 var frontPontos
 
+var pause
+
 func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
 		velocidade = 300
@@ -95,22 +97,26 @@ func _physics_process(delta):
 	
 	circulo.rotation = pp.angle_to_point(lixoPerto)
 	
-	if Input.is_action_just_pressed("inventory"):
-		inventario.visible = !(inventario.visible)
-		gameState["inventario"] = !gameState["inventario"]
-		animacao.stop()
 	if Input.is_action_just_pressed("temp"):
 		animacao.stop()
 	
-#	print(circulo.rotation)
-	if !gameState["inventario"]:
-		interagir()
-		
-		mover()
-		
-		animar()
+	if !gameState["pause"]:
+		if Input.is_action_just_pressed("inventory"):
+			inventario.visible = !(inventario.visible)
+			gameState["inventario"] = !gameState["inventario"]
+			animacao.stop()
+
+		#	print(circulo.rotation)
+		if !gameState["inventario"]:
+			interagir()
 			
-		move_and_slide()
+			mover()
+			
+			animar()
+				
+			move_and_slide()
+	else:
+		animacao.stop()
 		
 
 func areaDentro(area):

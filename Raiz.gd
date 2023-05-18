@@ -56,10 +56,13 @@ func _ready():
 		i.personagem = player
 	
 	var pontos = get_node("HUD/Pontos")
+	var pause = get_node("Pause")
 	
 	player.inventario = inventario
 	player.gameState = gameState
 	player.frontPontos = pontos
+	player.pause = pause
+	pause.gameState = gameState
 	inventario.gameState = gameState
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

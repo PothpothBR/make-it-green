@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://loja.gd" id="1_qlom6"]
 
 [node name="Loja" type="CanvasLayer" groups=["menu_interativo"]]
+visible = false
 script = ExtResource("1_qlom6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
