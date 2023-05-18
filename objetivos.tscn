@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjta5n3814avc"]
+[gd_scene load_steps=2 format=3 uid="uid://domtq4tc6ccih"]
 
-[ext_resource type="Script" path="res://Objetivos.gd" id="1_3f28o"]
+[ext_resource type="Script" path="res://objetivos.gd" id="1_10bsr"]
 
 [node name="Objetivos" type="CanvasLayer" groups=["objetivos"]]
-script = ExtResource("1_3f28o")
+script = ExtResource("1_10bsr")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 6
