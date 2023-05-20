@@ -1,7 +1,10 @@
 extends CanvasLayer
 
+const SQL = preload("res://sqlite_teste.gd")
+
 @onready var pause = get_node(".")
 
+var player
 var gameState
 
 func _physics_process(delta):
