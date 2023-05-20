@@ -86,6 +86,4 @@ sprite_frames = SubResource("SpriteFrames_14dlo")
 autoplay = "default"
 frame_progress = 0.135155
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="tree_exiting" from="." to="." method="lixoDestruido"]
