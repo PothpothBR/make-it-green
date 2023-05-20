@@ -16,11 +16,43 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
-	print("instanciando: ", contagemLixo - 1, " lixo...")
+	var player = get_tree().get_nodes_in_group("player")[0]
+	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
+	var interativo = get_tree().get_nodes_in_group("menu_interativo")
+	var lixeira = get_tree().get_nodes_in_group("lixeira")
+	var pontos = get_node("HUD/Pontos")
+	var pause = get_node("Pause")
+	var loja = get_node("Loja")
 	
-	var window_size: Vector2 = Vector2(3834, 2017)
+	gerarLixo(contagemLixo, 119, 63)
+	player.getLixoPerto()
+#	lixoPerto(player)
 	
-	for i in range(contagemLixo):
+	for i in interativo:
+		i.gameState = gameState
+	for i in lixeira:
+		i.personagem = player
+	
+	player.inventario = inventario
+	player.pause = pause
+	player.gameState = gameState
+	player.frontPontos = pontos
+	player.lixoTotal = contagemLixo
+	player.lixoAtual = contagemLixo
+	player.loja = loja
+	
+	objetivos.lixoTotal = contagemLixo
+	
+	pause.gameState = gameState
+	
+	inventario.gameState = gameState
+
+func gerarLixo(count, x, y):
+	print("instanciando: ", count - 1, " lixo...")
+	
+	var window_size: Vector2 = Vector2(x * 32, y * 32) #Vector2(3834, 2017)
+	
+	for i in range(count):
 		var lixo = CenaLixo.instantiate()
 
 		lixo.position = Vector2(
@@ -28,44 +60,3 @@ func _ready():
 			randf_range(geracaoLixoPadding, window_size[1]-geracaoLixoPadding)
 		)
 		add_child(lixo)
-	var player = get_tree().get_nodes_in_group("player")[0]
-	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
-	player.lixoTotal = contagemLixo
-	player.lixoAtual = contagemLixo
-	objetivos.lixoTotal = contagemLixo
-	
-	var lixos = get_tree().get_nodes_in_group("lixo")
-	var minVec = lixos[0].position
-	var min = Vector2(abs(player.position.x - lixos[0].position.x), abs(player.position.y - lixos[0].position.y))
-	for i in range(1, lixos.size()):
-		var nmin = Vector2(abs(player.position.x - lixos[i].position.x), abs(player.position.y - lixos[i].position.y))
-		if nmin.length() < min.length():
-			var c = lixos[i].get_child(0).get_child(1)
-			minVec = lixos[i].position
-			minVec.x += c.shape.size.x / 2
-			minVec.y += c.shape.size.y / 2
-			min = nmin
-	player.lixoPerto = minVec
-	
-	var interativo = get_tree().get_nodes_in_group("menu_interativo")
-	var lixeira = get_tree().get_nodes_in_group("lixeira")
-	
-	for i in interativo:
-		i.gameState = gameState
-	for i in lixeira:
-		i.personagem = player
-	
-	var pontos = get_node("HUD/Pontos")
-	var pause = get_node("Pause")
-	
-	player.inventario = inventario
-	player.gameState = gameState
-	player.frontPontos = pontos
-	player.pause = pause
-	pause.gameState = gameState
-	inventario.gameState = gameState
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	#print(Engine.get_frames_per_second())

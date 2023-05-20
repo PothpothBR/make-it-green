@@ -4,10 +4,13 @@ extends Node2D
 var debug: bool = true
 
 @onready var map: TileMap = get_node("TileMap")
-@onready var color = get_node("ColorRect")
 
 var x = 0
 var y = 0
+
+var w = 200
+var h = 200
+
 var WFCMap
 
 func loadData():
@@ -32,8 +35,8 @@ func _ready():
 		if tile.has("depends"):
 			tile.depends = findDepend(tile.depends, data.tiles)
 	
-	WFCMap = MapBuffer.new(Vector2i(100, 100), data.tiles)
-	while y < 100:
+	WFCMap = MapBuffer.new(Vector2i(w, h), data.tiles)
+	while y < h:
 		var pos = Vector2i(x, y)
 		var local = WFCMap.collapse(pos)
 
@@ -53,37 +56,7 @@ func _ready():
 			)
 
 		x += 1
-		if x >= 100:
+		if x >= w:
 			y += 1
 			x = 0
 		print("{x} - {y}".format({"x": x, "y": y}))
-
-func _process(_delta):
-	pass
-#	if y >= 100: 
-#		color.visible = true
-#		return
-#
-#	var pos = Vector2i(x, y)
-#	var local = WFCMap.collapse(pos)
-#
-#	map.set_cell(
-#		local.layer,
-#		pos,
-#		local.source,
-#		Vector2i(local.index[0], local.index[1])
-#	)
-#
-#	if local.has("depends"):
-#		map.set_cell(
-#			local.depends.layer,
-#			pos,
-#			local.depends.source,
-#			Vector2i(local.depends.index[0], local.depends.index[1])
-#		)
-#
-#	x += 1
-#	if x >= 100:
-#		y += 1
-#		x = 0
-	

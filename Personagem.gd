@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 @export var velocidade: float = 150
 
+@onready var player: CharacterBody2D = get_node(".")
 @onready var animacao = get_node("AnimatedSprite2D")
 @onready var interacao = get_node("AreaInteracao/ColisaoInteracao")
 @onready var circulo = get_node("CollisionShape2D")
 @onready var seta = get_node("CollisionShape2D/Sprite2D")
-@onready var p = get_node(".")
 @onready var lixoPerto: Vector2 = Vector2()
 @onready var pontos: int = 0
 
@@ -22,6 +22,7 @@ var gameState
 var frontPontos
 
 var pause
+var loja
 
 func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
@@ -72,19 +73,22 @@ func interagir() -> void:
 		interacao.disabled = false
 		
 func getLixoPerto() -> void:
-	var player = get_tree().get_nodes_in_group("player")[0]
 	var lixos = get_tree().get_nodes_in_group("lixo")
+	
 	if lixos.size() != 0:
 		var minVec = lixos[0].position
 		var min = Vector2(abs(player.position.x - lixos[0].position.x), abs(player.position.y - lixos[0].position.y))
+		
 		for i in range(1, lixos.size()):
 			var nmin = Vector2(abs(player.position.x - lixos[i].position.x), abs(player.position.y - lixos[i].position.y))
+			
 			if nmin.length() < min.length():
 				var c = lixos[i].get_child(0).get_child(1)
 				minVec = lixos[i].position
 				minVec.x += c.shape.size.x / 2
 				minVec.y += c.shape.size.y / 2
 				min = nmin
+				
 		player.lixoPerto = minVec
 	else:
 		seta.visible = false
@@ -93,20 +97,21 @@ func _physics_process(delta):
 	
 	getLixoPerto()
 	
-	var pp: Vector2 = p.position
+	var posicao: Vector2 = player.position
 	
-	circulo.rotation = pp.angle_to_point(lixoPerto)
-	
-	if Input.is_action_just_pressed("temp"):
-		animacao.stop()
+	circulo.rotation = posicao.angle_to_point(lixoPerto)
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):
 			inventario.visible = !(inventario.visible)
 			gameState["inventario"] = !gameState["inventario"]
 			animacao.stop()
+		if Input.is_action_just_pressed("temp"):
+			loja.visible = !(loja.visible)
+			gameState["inventario"] = !gameState["inventario"]
+			print(loja.visible)
+			animacao.stop()
 
-		#	print(circulo.rotation)
 		if !gameState["inventario"]:
 			interagir()
 			
@@ -121,6 +126,7 @@ func _physics_process(delta):
 
 func areaDentro(area):
 	var obj = area.get_parent().get_parent()
+	
 	if obj.tipo == "Lixo":
 		obj.tempoDeVida = 0.0
 		inventario.addItem(obj)
@@ -128,4 +134,5 @@ func areaDentro(area):
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()
+		
 	frontPontos.update(pontos)
