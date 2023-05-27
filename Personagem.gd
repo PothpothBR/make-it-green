@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const SQL = preload("res://save.gd")
+
 @export var velocidade: float = 150
 
 @onready var player: CharacterBody2D = get_node(".")
@@ -18,6 +20,7 @@ var inventario
 var lixeira
 
 var gameState
+var save
 
 var frontPontos
 
@@ -100,6 +103,12 @@ func _physics_process(delta):
 	var posicao: Vector2 = player.position
 	
 	circulo.rotation = posicao.angle_to_point(lixoPerto)
+
+	if Input.is_action_just_pressed("save"):
+			save["progressao_jogador"]["points"] = pontos
+			save["progressao_jogador"]["x"] = player.position.x
+			save["progressao_jogador"]["y"] = player.position.y
+			SQL.salvar(save)
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):

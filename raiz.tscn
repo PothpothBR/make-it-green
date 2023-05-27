@@ -22,9 +22,6 @@ position = Vector2(284, 249)
 
 [node name="Control" parent="." instance=ExtResource("4_sjf4x")]
 
-[node name="Inventario" parent="." instance=ExtResource("5_ap8o1")]
-visible = false
-
 [node name="Lixeira" parent="." instance=ExtResource("6_535so")]
 position = Vector2(416, 317)
 scale = Vector2(2, 2)
@@ -32,6 +29,9 @@ scale = Vector2(2, 2)
 [node name="Loja" parent="." instance=ExtResource("7_gawtd")]
 
 [node name="HUD" parent="." instance=ExtResource("8_is312")]
+
+[node name="Inventario" parent="." instance=ExtResource("5_ap8o1")]
+visible = false
 
 [node name="Pause" parent="." instance=ExtResource("6_ywlqb")]
 
