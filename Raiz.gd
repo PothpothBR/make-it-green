@@ -1,6 +1,6 @@
 extends Node
 
-const SQL = preload("res://sqlite_teste.gd")
+const SQL = preload("res://save.gd")
 const CenaLixo: PackedScene = preload("res://lixo.tscn")
 
 @export var geracaoLixo: int = 40
@@ -23,8 +23,8 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 		"id_saves": 1,
 		"nome": "aaa",
 		"points": 0,
-		"x": 0,
-		"y": 0
+		"x": 284,
+		"y": 249
 	}
 }
 
@@ -38,6 +38,13 @@ func _ready():
 	var pontos = get_node("HUD/Pontos")
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
+	
+	save = SQL.carregar(save)
+	
+	player.pontos = save["progressao_jogador"]["points"]
+	player.position = Vector2(save["progressao_jogador"]["x"], save["progressao_jogador"]["y"])
+	
+	pontos.update(player.pontos)
 	
 	gerarLixo(contagemLixo, 119, 63)
 	player.getLixoPerto()
