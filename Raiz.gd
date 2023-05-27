@@ -1,5 +1,6 @@
 extends Node
 
+const SQL = preload("res://sqlite_teste.gd")
 const CenaLixo: PackedScene = preload("res://lixo.tscn")
 
 @export var geracaoLixo: int = 40
@@ -44,6 +45,7 @@ func _ready():
 	objetivos.lixoTotal = contagemLixo
 	
 	pause.gameState = gameState
+	pause.player = player
 	
 	inventario.gameState = gameState
 
