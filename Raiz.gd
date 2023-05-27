@@ -14,6 +14,20 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 	"jogando": true
 }
 
+@onready var save = {
+	"saves": {
+		"data": "aaa",
+		"dificuldade": "easy"
+	},
+	"progressao_jogador": {
+		"id_saves": 1,
+		"nome": "aaa",
+		"points": 0,
+		"x": 0,
+		"y": 0
+	}
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
@@ -41,6 +55,7 @@ func _ready():
 	player.lixoTotal = contagemLixo
 	player.lixoAtual = contagemLixo
 	player.loja = loja
+	player.save = save
 	
 	objetivos.lixoTotal = contagemLixo
 	

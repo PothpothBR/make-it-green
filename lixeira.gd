@@ -6,7 +6,7 @@ extends Node2D
 var personagem: CharacterBody2D
 	
 func add(inventario) -> void:
-	var arr: Array[String] = inventario.items
+	var arr: Array[String] = inventario.arrLixos
 	items.append_array(arr)
 	
 	for item in arr:
