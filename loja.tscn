@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgq0p3xrufq77"]
+[gd_scene load_steps=3 format=3 uid="uid://dgq0p3xrufq77"]
 
 [ext_resource type="Script" path="res://loja.gd" id="1_qlom6"]
+[ext_resource type="Texture2D" uid="uid://c2lykhe4qe0d5" path="res://resources/Sprit-Itens.png" id="2_8q8wy"]
 
 [node name="Loja" type="CanvasLayer" groups=["menu_interativo"]]
-visible = false
 script = ExtResource("1_qlom6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -21,17 +21,31 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Semente_arvore" type="Sprite2D" parent="VBoxContainer/Items de Plantação/Semente de Arvore"]
+texture = ExtResource("2_8q8wy")
+hframes = 5
+vframes = 3
+
 [node name="Semente de Arbusto" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Semente_arbusto" type="Sprite2D" parent="VBoxContainer/Items de Plantação/Semente de Arbusto"]
+texture = ExtResource("2_8q8wy")
 
 [node name="Regador" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="regador" type="Sprite2D" parent="VBoxContainer/Items de Plantação/Regador"]
+texture = ExtResource("2_8q8wy")
+
 [node name="Fertilizante" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="fertilizante" type="Sprite2D" parent="VBoxContainer/Items de Plantação/Fertilizante"]
+texture = ExtResource("2_8q8wy")
 
 [node name="Mochilas" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -41,14 +55,26 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="mochila_1" type="Sprite2D" parent="VBoxContainer/Mochilas/Mochila 1"]
+texture = ExtResource("2_8q8wy")
+
 [node name="Mochila 2" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="mochila_2" type="Sprite2D" parent="VBoxContainer/Mochilas/Mochila 2"]
+texture = ExtResource("2_8q8wy")
 
 [node name="Mochila 3" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="mochila_3" type="Sprite2D" parent="VBoxContainer/Mochilas/Mochila 3"]
+texture = ExtResource("2_8q8wy")
+
 [node name="Mochila 4" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="mochila_4" type="Sprite2D" parent="VBoxContainer/Mochilas/Mochila 4"]
+texture = ExtResource("2_8q8wy")
