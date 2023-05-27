@@ -1,21 +1,59 @@
 [gd_scene load_steps=2 format=3 uid="uid://domtq4tc6ccih"]
 
-[ext_resource type="Script" path="res://objetivos.gd" id="1_10bsr"]
+[ext_resource type="Script" path="res://objetivos.gd" id="1_7mrqe"]
 
-[node name="Objetivos" type="CanvasLayer" groups=["objetivos"]]
-script = ExtResource("1_10bsr")
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_7mrqe")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -56.0
-offset_bottom = 56.0
+offset_left = -1126.0
+offset_top = -192.0
+offset_right = -1002.0
+offset_bottom = -76.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(1.87789, 1.08423)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="coleta_lixo" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
 bbcode_enabled = true
 fit_content = true
-autowrap_mode = 0
+scroll_active = false
+
+[node name="reciclar_lixo" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Reciclar o lixo:"
+fit_content = true
+scroll_active = false
+
+[node name="limpar_area" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Limpar a área:"
+fit_content = true
+scroll_active = false
+
+[node name="plantar_arvore" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Plantar árvores:"
+fit_content = true
+scroll_active = false
