@@ -47,7 +47,7 @@ func _ready():
 	pontos.update(player.pontos)
 	
 	gerarLixo(contagemLixo, 119, 63)
-	player.getLixoPerto()
+	player.apontaLixoPerto()
 #	lixoPerto(player)
 	
 	for i in interativo:

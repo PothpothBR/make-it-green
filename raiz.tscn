@@ -1,30 +1,38 @@
-[gd_scene load_steps=11 format=3 uid="uid://caqeo1s5t2t8p"]
+[gd_scene load_steps=12 format=3 uid="uid://caqeo1s5t2t8p"]
 
 [ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
-[ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="2_101hp"]
+[ext_resource type="PackedScene" uid="uid://ciushfkc35npk" path="res://mapa.tscn" id="2_74k67"]
 [ext_resource type="PackedScene" uid="uid://dvlweejf5trdf" path="res://personagem.tscn" id="3_egu52"]
 [ext_resource type="PackedScene" uid="uid://domtq4tc6ccih" path="res://objetivos.tscn" id="4_sjf4x"]
 [ext_resource type="PackedScene" uid="uid://cc0blbu3hv578" path="res://inventario.tscn" id="5_ap8o1"]
-[ext_resource type="PackedScene" uid="uid://dkg2gcc7rpsm7" path="res://lixeira.tscn" id="6_535so"]
-[ext_resource type="PackedScene" uid="uid://8nuh30yoi6iy" path="res://pause.tscn" id="6_ywlqb"]
+[ext_resource type="PackedScene" uid="uid://dq05523mnof4e" path="res://lixeira.tscn" id="6_535so"]
+[ext_resource type="PackedScene" path="res://pause.tscn" id="6_ywlqb"]
 [ext_resource type="PackedScene" uid="uid://dgq0p3xrufq77" path="res://loja.tscn" id="7_gawtd"]
-[ext_resource type="PackedScene" uid="uid://dcc5m2tpyo24k" path="res://hud.tscn" id="8_is312"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="8_is312"]
 [ext_resource type="AudioStream" uid="uid://xuc0n01jy5bk" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
+[ext_resource type="PackedScene" uid="uid://uhiqi3nw04l8" path="res://arvore.tscn" id="11_3qa2e"]
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
 
-[node name="cena_demo" parent="." instance=ExtResource("2_101hp")]
+[node name="mapa" parent="." instance=ExtResource("2_74k67")]
+
+[node name="Arvore" parent="." instance=ExtResource("11_3qa2e")]
+position = Vector2(594, 299)
+
+[node name="Arvore2" parent="." instance=ExtResource("11_3qa2e")]
+position = Vector2(253, 469)
+
+[node name="Lixeira" parent="." instance=ExtResource("6_535so")]
+texture_filter = 1
+position = Vector2(416, 317)
+scale = Vector2(4, 4)
 
 [node name="Personagem" parent="." instance=ExtResource("3_egu52")]
 z_as_relative = true
 position = Vector2(284, 249)
 
 [node name="Control" parent="." instance=ExtResource("4_sjf4x")]
-
-[node name="Lixeira" parent="." instance=ExtResource("6_535so")]
-position = Vector2(416, 317)
-scale = Vector2(2, 2)
 
 [node name="Loja" parent="." instance=ExtResource("7_gawtd")]
 

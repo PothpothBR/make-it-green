@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://uhiqi3nw04l8"]
+
+[ext_resource type="Script" path="res://arvore.gd" id="1_d7tia"]
+[ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_hs4lj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kh34m"]
+radius = 11.0
+height = 48.0
+
+[node name="Arvore" type="Node2D"]
+script = ExtResource("1_d7tia")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(2, -19)
+tile_set = ExtResource("1_hs4lj")
+format = 2
+layer_0/name = "Copa"
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(-196610, 589831, 2, -131074, 589831, 3, -65538, 589831, 4, -2, 589831, 5, 65534, 589831, 6, -196609, 655367, 2, -131073, 655367, 3, -65537, 655367, 4, -1, 655367, 5, -262144, 720903, 2, -196608, 720903, 3, -131072, 720903, 4, -65536, 720903, 5, -262143, 786439, 2, -196607, 786439, 3, -131071, 786439, 4, -65535, 786439, 5, 1, 786439, 6)
+layer_1/name = "tronco"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(65535, 655367, 6, 0, 720903, 6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_kh34m")

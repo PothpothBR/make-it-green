@@ -1,17 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cynuhdl7bt1y4"]
+[gd_scene load_steps=11 format=3 uid="uid://cynuhdl7bt1y4"]
 
 [ext_resource type="Script" path="res://Lixo.gd" id="1_4y11w"]
 [ext_resource type="Texture2D" uid="uid://dh40hirwn8xqd" path="res://resources/spritesheet-lixo.png" id="2_en1g7"]
-[ext_resource type="Shader" path="res://lixoOutline.gdshader" id="2_hwtuc"]
 [ext_resource type="Texture2D" uid="uid://h8xvh4afp80w" path="res://resources/021-Light01.png" id="4_nkjwt"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_geeah"]
-shader = ExtResource("2_hwtuc")
-shader_parameter/color = Vector4(246, 255, 0, 1)
-shader_parameter/width = 1.8
-shader_parameter/pattern = 0
-shader_parameter/inside = false
-shader_parameter/add_margins = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b736"]
 size = Vector2(32, 32)
@@ -57,6 +48,7 @@ animations = [{
 
 [node name="Lixo" type="Node2D" groups=["lixo"]]
 z_index = -1
+texture_filter = 1
 script = ExtResource("1_4y11w")
 
 [node name="Corpo" type="StaticBody2D" parent="."]
@@ -64,7 +56,7 @@ position = Vector2(16, 16)
 
 [node name="Sprite" type="Sprite2D" parent="Corpo"]
 z_as_relative = false
-material = SubResource("ShaderMaterial_geeah")
+texture_filter = 1
 texture = ExtResource("2_en1g7")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
@@ -81,9 +73,12 @@ shape = SubResource("RectangleShape2D_x31c3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Corpo"]
 z_index = 4096
 z_as_relative = false
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
+position = Vector2(-2, -5)
+scale = Vector2(0.21258, 0.204964)
 sprite_frames = SubResource("SpriteFrames_14dlo")
 autoplay = "default"
-frame_progress = 0.135155
+frame = 2
+frame_progress = 0.438339
 
 [connection signal="tree_exiting" from="." to="." method="lixoDestruido"]

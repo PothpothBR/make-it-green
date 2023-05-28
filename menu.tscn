@@ -16,7 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_8g0o4")
 
 [node name="cena_demo" parent="." instance=ExtResource("1_cc3ki")]
-position = Vector2(-1920, -43)
+position = Vector2(-2525, -3)
 
 [node name="menu" type="VBoxContainer" parent="."]
 layout_mode = 1
