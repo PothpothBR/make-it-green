@@ -3,13 +3,10 @@ extends Node2D
 var semente: bool = true
 var muda: bool = false
 @onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
-
-func _ready():
-	Pontos.adicionar(4)
-
 @onready var col = get_node("StaticBody2D/Collision")
 
 func _ready():
+	Pontos.adicionar(4)
 	col.disabled = true
 
 func _process(_delta):

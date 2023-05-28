@@ -54,6 +54,7 @@ func _ready():
 		i.gameState = gameState
 	for i in lixeira:
 		i.personagem = player
+		i.Pontos = Pontos
 	
 	player.inventario = inventario
 	player.pause = pause
