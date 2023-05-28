@@ -36,17 +36,15 @@ func _ready():
 	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
 	var interativo = get_tree().get_nodes_in_group("menu_interativo")
 	var lixeira = get_tree().get_nodes_in_group("lixeira")
-	var pontos = get_node("HUD/Pontos")
+	var Pontos = get_node("HUD/Pontos")
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
 	
 	if Global.load:
 		save = Save.carregar(save)
 	
-	player.pontos = save["progressao_jogador"]["points"]
+	Pontos.adicionar(save["progressao_jogador"]["points"])
 	player.position = Vector2(save["progressao_jogador"]["x"], save["progressao_jogador"]["y"])
-	
-	pontos.update(player.pontos)
 	
 	gerarLixo(contagemLixo, 119, 63)
 	player.apontaLixoPerto()
@@ -60,7 +58,6 @@ func _ready():
 	player.inventario = inventario
 	player.pause = pause
 	player.gameState = gameState
-	player.frontPontos = pontos
 	player.lixoTotal = contagemLixo
 	player.lixoAtual = contagemLixo
 	player.loja = loja

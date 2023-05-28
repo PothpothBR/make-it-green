@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var circulo = get_node("CollisionShape2D")
 @onready var seta = get_node("CollisionShape2D/Sprite2D")
 @onready var lixoPerto: Vector2 = Vector2()
-@onready var pontos: int = 0
+@onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
 
 const Arvore: PackedScene = preload("res://arvore.tscn")
 
@@ -21,8 +21,6 @@ var lixeira
 
 var gameState
 var save
-
-var frontPontos
 
 var pause
 var loja
@@ -93,8 +91,6 @@ func plantar(item) -> bool:
 	var arve = Arvore.instantiate()
 	arve.position = self.position
 	get_node("/root").add_child(arve)
-	pontos += 8
-	frontPontos.update(pontos)
 	return true
 		
 func apontaLixoPerto() -> void:
@@ -127,7 +123,7 @@ func _physics_process(delta):
 	circulo.rotation = posicao.angle_to_point(lixoPerto)
 
 	if Input.is_action_just_pressed("save"):
-			save["progressao_jogador"]["points"] = pontos
+			save["progressao_jogador"]["points"] = Pontos.pontos
 			save["progressao_jogador"]["x"] = player.position.x
 			save["progressao_jogador"]["y"] = player.position.y
 			Save.salvar(save)
@@ -162,10 +158,8 @@ func areaDentro(area):
 	if obj.tipo == "Lixo":
 		obj.tempoDeVida = 0.0
 		inventario.addItem(obj)
-		pontos += 1
+		Pontos.adicionar(1)
 	# ação de interagir com a lixeira
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()
-		
-	frontPontos.update(pontos)

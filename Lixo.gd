@@ -36,3 +36,15 @@ func lixoDestruido():
 	player.lixoAtual -= 1
 	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
 	objetivos.coletar(player.lixoAtual)
+	
+func lixo_reciclado():
+	#preencher com os dados, lixo que são reciclados
+	pass
+	
+func area_limpa():
+	#preencher com a area limpa
+	pass
+	
+func arvore_plantadas():
+	#preencher com uma variavel(objeto arvore plantado)
+	pass
