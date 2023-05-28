@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objetivos.gd" id="1_7mrqe"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" groups=["objetivos"]]
 script = ExtResource("1_7mrqe")
 
 [node name="Control" type="Control" parent="."]
