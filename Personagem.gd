@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-const SQL = preload("res://save.gd")
-
 @export var velocidade: float = 150
 
 @onready var player: CharacterBody2D = get_node(".")
@@ -132,7 +130,7 @@ func _physics_process(delta):
 			save["progressao_jogador"]["points"] = pontos
 			save["progressao_jogador"]["x"] = player.position.x
 			save["progressao_jogador"]["y"] = player.position.y
-			SQL.salvar(save)
+			Save.salvar(save)
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):
