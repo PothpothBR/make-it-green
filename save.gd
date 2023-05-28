@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-extends Node
-=======
 class_name Save
 
 const DB_NAME: String = "res://data/master.db"
@@ -63,13 +60,9 @@ static func criar():
 static func migrar():
 	var db = openDb()
 	pass
->>>>>>> Stashed changes
 
 static func salvar(save):
-	var db = SQLite.new()
-	db.path = "res://master"
-	db.verbosity_level = SQLite.NORMAL
-	db.open_db()
+	var db = openDb()
 	
 	var selected = db.select_rows("saves", "", ["*"])
 	if selected.is_empty():
@@ -80,10 +73,7 @@ static func salvar(save):
 	db.close_db()
 	
 static func carregar(save):
-	var db = SQLite.new()
-	db.path = "res://master"
-	db.verbosity_level = SQLite.NORMAL
-	db.open_db()
+	var db = openDb()
 	
 	var selected = db.select_rows("saves", "", ["data", "dificuldade"])
 	if selected.is_empty():

@@ -1,6 +1,5 @@
 extends Node
 
-const SQL = preload("res://save.gd")
 const CenaLixo: PackedScene = preload("res://lixo.tscn")
 
 @export var geracaoLixo: int = 40
@@ -39,7 +38,7 @@ func _ready():
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
 	
-	save = SQL.carregar(save)
+	save = Save.carregar(save)
 	
 	player.pontos = save["progressao_jogador"]["points"]
 	player.position = Vector2(save["progressao_jogador"]["x"], save["progressao_jogador"]["y"])
