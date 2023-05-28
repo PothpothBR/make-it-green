@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dq05523mnof4e" path="res://lixeira.tscn" id="6_535so"]
 [ext_resource type="PackedScene" uid="uid://8nuh30yoi6iy" path="res://pause.tscn" id="6_ywlqb"]
 [ext_resource type="PackedScene" uid="uid://dgq0p3xrufq77" path="res://loja.tscn" id="7_gawtd"]
-[ext_resource type="PackedScene" uid="uid://dcc5m2tpyo24k" path="res://hud.tscn" id="8_is312"]
-[ext_resource type="AudioStream" uid="uid://2opi8y0mhs2b" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="8_is312"]
+[ext_resource type="AudioStream" uid="uid://xuc0n01jy5bk" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
 [ext_resource type="PackedScene" uid="uid://uhiqi3nw04l8" path="res://arvore.tscn" id="11_3qa2e"]
 
 [node name="Raiz" type="Node"]

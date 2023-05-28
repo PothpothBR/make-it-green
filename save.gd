@@ -11,7 +11,51 @@ static func openDb() -> SQLite:
 
 static func criar():
 	var db = openDb()
-	pass
+	db.create_table("saves", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true},
+		"data": {"data_type": "text", "not_null": true},
+		"dificuldade": {"data_type": "text", "not_null": true}
+	})
+	db.create_table("itens", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true},
+		"nome": {"data_type": "text", "not_null": true},
+		"descricao": {"data_type": "text"},
+		"valor": {"data_type": "real", "not_null": true},
+		"fator": {"data_type": "real"}
+	})
+	db.create_table("objetivos", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true},
+		"nome": {"data_type": "text", "not_null": true},
+		"objetivo": {"data_type": "real", "not_null": true}
+	})
+	db.create_table("progressao_itens", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true},
+		"id_itens": {"data_type": "int", "foreign_key": "itens.id", "not_null": true, "on_delete": "cascade"},
+		"id_saves": {"data_type": "int", "foreign_key": "saves.id", "not_null": true, "on_delete": "cascade"},
+		"pos_x": {"data_type": "real"},
+		"pos_y": {"data_type": "real"}
+	})
+	db.create_table("progressao_jogador", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true, "on_delete": "cascade"},
+		"id_saves": {"data_type": "int", "foreign_key": "saves.id", "not_null": true},
+		"nome": {"data_type": "text", "not_null": true},
+		"points": {"data_type": "int", "not_null": true},
+		"x": {"data_type": "real", "not_null": true},
+		"y": {"data_type": "real", "not_null": true}
+	})
+	db.create_table("progressao_mundo", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true},
+		"id_saves": {"data_type": "int", "foreign_key": "saves.id", "not_null": true, "on_delete": "cascade"},
+		"areas_completadas": {"data_type": "int", "not_null": true},
+		"areas_x": {"data_type": "int", "not_null": true},
+		"areas_y": {"data_type": "int", "not_null": true}
+	})
+	db.create_table("progressao_itens", {
+		"id": {"data_type":"int", "primary_key": true, "auto_increment": true, "not_null": true},
+		"id_saves": {"data_type": "int", "foreign_key": "saves.id", "not_null": true, "on_delete": "cascade"},
+		"id_objetivos": {"data_type": "int", "foreign_key": "objetivos.id", "not_null": true, "on_delete": "cascade"},
+		"valor": {"data_type": "real"}
+	})
 	
 static func migrar():
 	var db = openDb()

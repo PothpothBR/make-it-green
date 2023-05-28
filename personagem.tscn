@@ -1,8 +1,8 @@
 [gd_scene load_steps=42 format=3 uid="uid://dvlweejf5trdf"]
 
 [ext_resource type="Script" path="res://Personagem.gd" id="1_08jtd"]
-[ext_resource type="Texture2D" uid="uid://cwd5naksclntu" path="res://resources/character.png" id="2_486j0"]
-[ext_resource type="Texture2D" uid="uid://c0aj3v8o8cb4h" path="res://resources/UI/arrow.png" id="3_bltlj"]
+[ext_resource type="Texture2D" uid="uid://73xe6inuqolg" path="res://resources/character.png" id="2_486j0"]
+[ext_resource type="Texture2D" uid="uid://cshuhtycgt4ww" path="res://resources/UI/arrow.png" id="3_bltlj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tn3vh"]
 atlas = ExtResource("2_486j0")
@@ -281,6 +281,8 @@ script = ExtResource("1_08jtd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qca4h")
 animation = &"Baixo"
+frame = 7
+frame_progress = 0.56139
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
