@@ -2,6 +2,10 @@ extends Node2D
 
 var semente: bool = true
 var muda: bool = false
+@onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
+
+func _ready():
+	Pontos.adicionar(4)
 
 func _process(_delta):
 	if muda:
@@ -20,8 +24,10 @@ func _on_timer_timeout():
 		timer.stop()
 		timer.set_wait_time(15)
 		timer.start()
+		Pontos.adicionar(1)
 		
 	elif muda:
 		muda = false
 		get_node("Muda").visible = false
 		get_node("Arvore").visible = true
+		Pontos.adicionar(8)
