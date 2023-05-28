@@ -1,5 +1,6 @@
 [gd_resource type="TileSet" load_steps=29 format=3 uid="uid://b0sdxwuc1fn3y"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://d17kqchmlydnx" path="res://resources/tiles/anima1-0.png" id="1_3y65b"]
 [ext_resource type="Texture2D" uid="uid://blvm03nm44u2i" path="res://resources/tiles/anima1-1.png" id="2_2ehqv"]
 [ext_resource type="Texture2D" uid="uid://10s3frjhhhkd" path="res://resources/tiles/natureza2-1.png" id="3_5xwus"]
@@ -14,6 +15,22 @@
 [ext_resource type="Texture2D" uid="uid://c5nxo05ynm7d6" path="res://resources/tiles/natureza1-1.png" id="10_fx2fh"]
 [ext_resource type="Texture2D" uid="uid://co0ypfuoqeho1" path="res://resources/tiles/natureza1-2.png" id="11_4oaix"]
 [ext_resource type="Texture2D" uid="uid://baeu2amk7kbyg" path="res://resources/tiles/natureza2-0.png" id="12_mikma"]
+=======
+[ext_resource type="Texture2D" uid="uid://cjqojskvgrwf7" path="res://resources/Tiles/anima1-0.png" id="1_3y65b"]
+[ext_resource type="Texture2D" uid="uid://dgjq2x7vedu2p" path="res://resources/Tiles/anima1-1.png" id="2_2ehqv"]
+[ext_resource type="Texture2D" uid="uid://dpgsgt6dovl6p" path="res://resources/Tiles/natureza2-1.png" id="3_5xwus"]
+[ext_resource type="Texture2D" uid="uid://bvcclb2kerghf" path="res://resources/Tiles/natureza2-2.png" id="4_wjweq"]
+[ext_resource type="Texture2D" uid="uid://cyny3js3hms18" path="res://resources/Tiles/chao1-0.png" id="5_ey4gi"]
+[ext_resource type="Texture2D" uid="uid://dw7f4c3iuwoqt" path="res://resources/Tiles/chao1-2-e25.png" id="5_iaquq"]
+[ext_resource type="Texture2D" uid="uid://c047tapx6e0kr" path="res://resources/Tiles/chao1-2-e50.png" id="6_7p6qb"]
+[ext_resource type="Texture2D" uid="uid://c88r8djbhysjo" path="res://resources/Tiles/chao1-1.png" id="6_7pqtj"]
+[ext_resource type="Texture2D" uid="uid://d3dh7m02tl31" path="res://resources/Tiles/chao1-2.png" id="7_f10by"]
+[ext_resource type="Texture2D" uid="uid://c5oh6wma1ei2x" path="res://resources/Tiles/chao2-0.png" id="8_j21mo"]
+[ext_resource type="Texture2D" uid="uid://bo8x0agi138ad" path="res://resources/Tiles/natureza1-0.png" id="9_2fmgh"]
+[ext_resource type="Texture2D" uid="uid://orji3n0trt70" path="res://resources/Tiles/natureza1-1.png" id="10_fx2fh"]
+[ext_resource type="Texture2D" uid="uid://du0inofhj6fha" path="res://resources/Tiles/natureza1-2.png" id="11_4oaix"]
+[ext_resource type="Texture2D" uid="uid://bpcyipwvy4ruv" path="res://resources/Tiles/natureza2-0.png" id="12_mikma"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iao40"]
 texture = ExtResource("1_3y65b")
