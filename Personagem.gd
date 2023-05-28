@@ -19,6 +19,8 @@ var inventario
 
 var lixeira
 
+var objetivos
+
 var gameState
 var save
 
@@ -91,6 +93,7 @@ func plantar(item) -> bool:
 	var arve = Arvore.instantiate()
 	arve.position = self.position
 	get_node("/root").add_child(arve)
+	objetivos.plantar(1)
 	return true
 		
 func apontaLixoPerto() -> void:
@@ -159,6 +162,7 @@ func areaDentro(area):
 		obj.tempoDeVida = 0.0
 		inventario.addItem(obj)
 		Pontos.adicionar(1)
+		objetivos.coletar(1)
 	# ação de interagir com a lixeira
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
