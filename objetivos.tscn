@@ -48,20 +48,20 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="limpar_area" type="RichTextLabel" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_nwscr")
-bbcode_enabled = true
-text = "Limpar a área:"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="plantar_arvore" type="RichTextLabel" parent="Control/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_nwscr")
 bbcode_enabled = true
 text = "Plantar árvores:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="limpar_area" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_nwscr")
+bbcode_enabled = true
+text = "Limpar a área:"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

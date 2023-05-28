@@ -55,6 +55,7 @@ func _ready():
 	for i in lixeira:
 		i.personagem = player
 		i.Pontos = Pontos
+		i.objetivos = objetivos
 	
 	player.inventario = inventario
 	player.pause = pause
@@ -63,8 +64,7 @@ func _ready():
 	player.lixoAtual = contagemLixo
 	player.loja = loja
 	player.save = save
-	
-	objetivos.lixoTotal = contagemLixo
+	player.objetivos = objetivos
 	
 	pause.gameState = gameState
 	pause.player = player
@@ -86,6 +86,6 @@ func gerarLixo(count, x, y):
 		add_child(lixo)
 		
 func _physics_process(delta):
-	if Input.is_action_just_pressed("inventory"):
+	if Input.is_action_just_pressed("inventory") or Input.is_action_just_pressed("temp"):
 			for i in hud.get_children():
 				i.visible = !i.visible

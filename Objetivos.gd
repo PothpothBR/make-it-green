@@ -2,42 +2,45 @@ extends CanvasLayer
 
 @onready var coleta = get_node("Control/VBoxContainer/coleta_lixo")
 @onready var reciclagem = get_node("Control/VBoxContainer/reciclar_lixo")
-@onready var area_limpa = get_node("Control/VBoxContainer/limpar_area")
 @onready var arvores_plantadas = get_node("Control/VBoxContainer/plantar_arvore")
-var lixoTotal: int
-var limpeza_area: int
+@onready var area_limpa = get_node("Control/VBoxContainer/limpar_area")
+var lixoColetado: int = 0
+var lixoReciclado: int = 0
+var arvoresPlantadas: int = 0
 
 func _ready():
 	coleta.text = "Coleta do lixo: 0/10"
-	reciclagem.text = "Reciclagem: 0/10"
+	reciclagem.text = "Reciclagem do lixo: 0/10"
 	area_limpa.text = "Limpeza da Área: 0/10"
 	arvores_plantadas.text = "Árvores Plantadas: 0/10"
 
-func coletar(lixoAtual: int) -> void:
-	var lixoDestruido: int = lixoTotal - lixoAtual
-	if lixoDestruido < 10:
-		coleta.text = "Coleta do lixo: {total}/10".format({"total": lixoDestruido})
+func coletar(lixo: int) -> void:
+	lixoColetado += lixo
+	if lixoColetado < 10:
+		coleta.text = "Coleta do lixo: {total}/10".format({"total": lixoColetado})
 	else:
-		coleta.text = "[color=green][s]-Coleta do Lixo: {total}/10[/s][/color]".format({"total": lixoDestruido})
+		coleta.text = "[color=green][s]-Coleta do Lixo: {total}/10[/s][/color]".format({"total": lixoColetado})
+	limpar()
 
-func reciclado(lixoAtual: int) -> void:
-	var lixo_reciclado: int = lixoTotal - lixoAtual
-	if lixo_reciclado < 10:
-		reciclagem.text = "Reciclagem do lixo: {total}/10".format({"total": lixo_reciclado})
+func reciclar(lixo: int) -> void:
+	lixoReciclado += lixo
+	if lixoReciclado < 10:
+		reciclagem.text = "Reciclagem do lixo: {total}/10".format({"total": lixoReciclado})
 	else:
-		reciclagem.text = "[color=green][s]-Reciclagem do Lixo: {total}/10[/s][/color]".format({"total": lixo_reciclado})
+		reciclagem.text = "[color=green][s]-Reciclagem do Lixo: {total}/10[/s][/color]".format({"total": lixoReciclado})
+	limpar()
 
-func limpar(lixoAtual: int) -> void:
-	var limpeza: int = limpeza_area - lixoAtual
-	if limpeza < 10:
-		area_limpa.text = "Limpeza da Área: {total}/10".format({"total": limpeza})
-	else:
-		area_limpa.text = "[color=green][s]-Limpeza da Área: {total}/10[/s][/color]".format({"total": limpeza})
-#conseguir alterar o valor diretamente
-#conseguir incrementar valor
 func plantar(arvore: int) -> void:
-	var arv_plan: int = arvore
-	if arv_plan < 10:
-		arvores_plantadas.text = "Arvores plantadas: {total}/10".format({"total": arv_plan})
+	arvoresPlantadas += arvore
+	if arvoresPlantadas < 10:
+		arvores_plantadas.text = "Arvores plantadas: {total}/10".format({"total": arvoresPlantadas})
 	else:
-		arvores_plantadas.text = "[color=green][s]-Arvores plantadas: {total}/10[/s][/color]".format({"total": arv_plan})
+		arvores_plantadas.text = "[color=green][s]-Arvores plantadas: {total}/10[/s][/color]".format({"total": arvoresPlantadas})
+	limpar()
+
+func limpar() -> void:
+	var limpeza: int = clamp(lixoColetado, 0, 10) + clamp(lixoReciclado, 0, 10) + clamp(arvoresPlantadas, 0, 10)
+	if limpeza < 30:
+		area_limpa.text = "Limpeza da Área: {total}/30".format({"total": limpeza})
+	else:
+		area_limpa.text = "[color=green][s]-Limpeza da Área: {total}/30[/s][/color]".format({"total": limpeza})

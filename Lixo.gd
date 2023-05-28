@@ -34,8 +34,6 @@ func executarDegradacao():
 func lixoDestruido():
 	var player = get_tree().get_nodes_in_group("player")[0]
 	player.lixoAtual -= 1
-	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
-	objetivos.coletar(player.lixoAtual)
 	
 func lixo_reciclado():
 	#preencher com os dados, lixo que são reciclados
