@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_8g0o4"]
 [ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="1_cc3ki"]
-[ext_resource type="Texture2D" uid="uid://doaeee532ji5a" path="res://resources/makeitgreenlogo.png" id="3_8b6ye"]
+[ext_resource type="Texture2D" uid="uid://6ob0uqdxkgfv" path="res://resources/makeitgreenlogo.png" id="3_8b6ye"]
 [ext_resource type="Theme" uid="uid://smvv41fgogvy" path="res://resources/UI/UI_teste/theme_button.tres" id="3_cmbn0"]
 [ext_resource type="Script" path="res://resources/UI/UI_teste/menu.gd" id="3_m36et"]
 
@@ -54,4 +54,5 @@ scale = Vector2(0.368108, 0.157991)
 texture = ExtResource("3_8b6ye")
 
 [connection signal="pressed" from="menu/novo_jogo" to="menu" method="_on_novo_jogo_pressed"]
+[connection signal="pressed" from="menu/carregar" to="." method="BotaoCarregar"]
 [connection signal="pressed" from="menu/sair" to="menu" method="_on_sair_pressed"]

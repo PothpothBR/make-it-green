@@ -51,6 +51,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="Semente_arvore" type="Sprite2D" parent="Control/VBoxContainer/Items de Plantação/Semente de Arvore/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
@@ -80,10 +81,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="Semente_arbusto" type="Sprite2D" parent="Control/VBoxContainer/Items de Plantação/Semente de Arbusto/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
-frame = 10
+frame = 4
 
 [node name="nome" type="Label" parent="Control/VBoxContainer/Items de Plantação/Semente de Arbusto"]
 layout_mode = 2
@@ -110,6 +112,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="regador" type="Sprite2D" parent="Control/VBoxContainer/Items de Plantação/Regador/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
@@ -140,6 +143,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="fertilizante" type="Sprite2D" parent="Control/VBoxContainer/Items de Plantação/Fertilizante/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
@@ -174,6 +178,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="mochila_1" type="Sprite2D" parent="Control/VBoxContainer/Mochilas/Mochila 1/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
@@ -204,6 +209,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="mochila_2" type="Sprite2D" parent="Control/VBoxContainer/Mochilas/Mochila 2/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
@@ -234,6 +240,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="mochila_3" type="Sprite2D" parent="Control/VBoxContainer/Mochilas/Mochila 3/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
@@ -264,6 +271,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="mochila_4" type="Sprite2D" parent="Control/VBoxContainer/Mochilas/Mochila 4/Container"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3

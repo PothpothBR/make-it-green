@@ -20,3 +20,7 @@ func voltar():
 
 func sair():
 	get_tree().change_scene_to_file("res://menu.tscn")
+
+
+func salvar():
+	pass # Replace with function body.

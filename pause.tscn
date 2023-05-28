@@ -47,10 +47,15 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Return"
 
+[node name="Salvar" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Salvar"
+
 [node name="Sair" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "Sair"
 
 [connection signal="pressed" from="Control/VBoxContainer/Return" to="." method="voltar"]
+[connection signal="pressed" from="Control/VBoxContainer/Salvar" to="." method="salvar"]
 [connection signal="pressed" from="Control/VBoxContainer/Sair" to="." method="sair"]

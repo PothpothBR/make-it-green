@@ -75,15 +75,24 @@ static func salvar(save):
 static func carregar(save):
 	var db = openDb()
 	
-	var selected = db.select_rows("saves", "", ["data", "dificuldade"])
+	var selected = db.select_rows("saves", "id = {0}".format({"0": Global.save}), ["data", "dificuldade"])
 	if selected.is_empty():
 		db.close_db()
 		return save
 	save["saves"] = selected[0]
 	
-	selected = db.select_rows("progressao_jogador", "id_saves = 1", ["id_saves", "nome", "points", "x", "y"])
+	selected = db.select_rows("progressao_jogador", "id_saves = {0}".format({"0": Global.save}), ["id_saves", "nome", "points", "x", "y"])
 	save["progressao_jogador"] = selected[0]
 	
 	db.close_db()
 	
 	return save
+	
+static func listaSaves():
+	var db = openDb()
+	
+	var selected = db.select_rows("saves", "", ["*"])
+	
+	db.close_db()
+	
+	return selected
