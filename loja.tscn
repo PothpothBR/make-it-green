@@ -18,6 +18,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Items de Plantação" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -37,6 +39,21 @@ texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
 
+[node name="nome" type="Label" parent="VBoxContainer/Items de Plantação/Semente de Arvore"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Semente de Árvore"
+
+[node name="valor" type="Label" parent="VBoxContainer/Items de Plantação/Semente de Arvore"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Items de Plantação/Semente de Arvore"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
+
 [node name="Semente de Arbusto" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -51,6 +68,21 @@ texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
 frame = 10
+
+[node name="nome" type="Label" parent="VBoxContainer/Items de Plantação/Semente de Arbusto"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Semente de Árbusto"
+
+[node name="valor" type="Label" parent="VBoxContainer/Items de Plantação/Semente de Arbusto"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Items de Plantação/Semente de Arbusto"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
 
 [node name="Regador" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
 layout_mode = 2
@@ -67,6 +99,21 @@ hframes = 5
 vframes = 3
 frame = 2
 
+[node name="nome" type="Label" parent="VBoxContainer/Items de Plantação/Regador"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Regador"
+
+[node name="valor" type="Label" parent="VBoxContainer/Items de Plantação/Regador"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Items de Plantação/Regador"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
+
 [node name="Fertilizante" type="VBoxContainer" parent="VBoxContainer/Items de Plantação"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -81,6 +128,21 @@ texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
 frame = 1
+
+[node name="nome" type="Label" parent="VBoxContainer/Items de Plantação/Fertilizante"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fertilizante"
+
+[node name="valor" type="Label" parent="VBoxContainer/Items de Plantação/Fertilizante"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Items de Plantação/Fertilizante"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
 
 [node name="Mochilas" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -101,6 +163,21 @@ hframes = 5
 vframes = 3
 frame = 5
 
+[node name="nome" type="Label" parent="VBoxContainer/Mochilas/Mochila 1"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mochila 1"
+
+[node name="valor" type="Label" parent="VBoxContainer/Mochilas/Mochila 1"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Mochilas/Mochila 1"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
+
 [node name="Mochila 2" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -115,6 +192,21 @@ texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
 frame = 7
+
+[node name="nome" type="Label" parent="VBoxContainer/Mochilas/Mochila 2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mochila 2"
+
+[node name="valor" type="Label" parent="VBoxContainer/Mochilas/Mochila 2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Mochilas/Mochila 2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
 
 [node name="Mochila 3" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
 layout_mode = 2
@@ -131,6 +223,21 @@ hframes = 5
 vframes = 3
 frame = 8
 
+[node name="nome" type="Label" parent="VBoxContainer/Mochilas/Mochila 3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mochila 3"
+
+[node name="valor" type="Label" parent="VBoxContainer/Mochilas/Mochila 3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Mochilas/Mochila 3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
+
 [node name="Mochila 4" type="VBoxContainer" parent="VBoxContainer/Mochilas"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -145,3 +252,18 @@ texture = ExtResource("2_8q8wy")
 hframes = 5
 vframes = 3
 frame = 9
+
+[node name="nome" type="Label" parent="VBoxContainer/Mochilas/Mochila 4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mochila 4"
+
+[node name="valor" type="Label" parent="VBoxContainer/Mochilas/Mochila 4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="Button" type="Button" parent="VBoxContainer/Mochilas/Mochila 4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar"
