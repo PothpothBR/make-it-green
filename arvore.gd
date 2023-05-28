@@ -3,6 +3,11 @@ extends Node2D
 var semente: bool = true
 var muda: bool = false
 
+@onready var col = get_node("StaticBody2D/Collision")
+
+func _ready():
+	col.disabled = true
+
 func _process(_delta):
 	if muda:
 		var muda_node = get_node("Muda")
@@ -12,6 +17,7 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	if semente:
+		col.disabled = false
 		muda = true
 		semente = false
 		get_node("Semente").visible = false

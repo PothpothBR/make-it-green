@@ -5,7 +5,7 @@
 [sub_resource type="Theme" id="Theme_nwscr"]
 RichTextLabel/font_sizes/normal_font_size = 20
 
-[node name="CanvasLayer" type="CanvasLayer" groups=["objetivos"]]
+[node name="Objetivos" type="CanvasLayer" groups=["objetivos"]]
 script = ExtResource("1_7mrqe")
 
 [node name="Control" type="Control" parent="."]

@@ -7,6 +7,8 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 @export var modGeracaoLixo: int = 5
 
 @onready var inventario = get_node("Inventario")
+@onready var hud = get_node("HUD")
+
 @onready var gameState = {
 	"pause": false,
 	"inventario": false,
@@ -38,7 +40,8 @@ func _ready():
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
 	
-	save = Save.carregar(save)
+	if Global.load:
+		save = Save.carregar(save)
 	
 	player.pontos = save["progressao_jogador"]["points"]
 	player.position = Vector2(save["progressao_jogador"]["x"], save["progressao_jogador"]["y"])
@@ -83,3 +86,8 @@ func gerarLixo(count, x, y):
 			randf_range(geracaoLixoPadding, window_size[1]-geracaoLixoPadding)
 		)
 		add_child(lixo)
+		
+func _physics_process(delta):
+	if Input.is_action_just_pressed("inventory"):
+			for i in hud.get_children():
+				i.visible = !i.visible
