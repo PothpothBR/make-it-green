@@ -1,6 +1,6 @@
 extends Node
 
-const SQL = preload("res://sqlite_teste.gd")
+const SQL = preload("res://save.gd")
 const CenaLixo: PackedScene = preload("res://lixo.tscn")
 
 @export var geracaoLixo: int = 40
@@ -14,6 +14,20 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 	"jogando": true
 }
 
+@onready var save = {
+	"saves": {
+		"data": "aaa",
+		"dificuldade": "easy"
+	},
+	"progressao_jogador": {
+		"id_saves": 1,
+		"nome": "aaa",
+		"points": 0,
+		"x": 284,
+		"y": 249
+	}
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
@@ -25,8 +39,15 @@ func _ready():
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
 	
+	save = SQL.carregar(save)
+	
+	player.pontos = save["progressao_jogador"]["points"]
+	player.position = Vector2(save["progressao_jogador"]["x"], save["progressao_jogador"]["y"])
+	
+	pontos.update(player.pontos)
+	
 	gerarLixo(contagemLixo, 119, 63)
-	player.getLixoPerto()
+	player.apontaLixoPerto()
 #	lixoPerto(player)
 	
 	for i in interativo:
@@ -41,6 +62,7 @@ func _ready():
 	player.lixoTotal = contagemLixo
 	player.lixoAtual = contagemLixo
 	player.loja = loja
+	player.save = save
 	
 	objetivos.lixoTotal = contagemLixo
 	

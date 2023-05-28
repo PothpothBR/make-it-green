@@ -12,7 +12,3 @@ texture_repeat = 1
 tile_set = ExtResource("1_0oyba")
 cell_quadrant_size = 32
 format = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3027, 1897)
-zoom = Vector2(0.2, 0.2)

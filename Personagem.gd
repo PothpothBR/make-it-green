@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const SQL = preload("res://save.gd")
+
 @export var velocidade: float = 150
 
 @onready var player: CharacterBody2D = get_node(".")
@@ -10,6 +12,8 @@ extends CharacterBody2D
 @onready var lixoPerto: Vector2 = Vector2()
 @onready var pontos: int = 0
 
+const Arvore: PackedScene = preload("res://arvore.tscn")
+
 var lixoTotal = 0
 var lixoAtual = 0
 
@@ -18,6 +22,7 @@ var inventario
 var lixeira
 
 var gameState
+var save
 
 var frontPontos
 
@@ -71,8 +76,30 @@ func interagir() -> void:
 	interacao.disabled = true
 	if Input.is_action_just_pressed("interact"):
 		interacao.disabled = false
+	if Input.is_action_just_pressed("plantar"):
+		if not plantar(selecionar_semente()):
+			pass
+
+func selecionar_semente():
+	return {
+		"type": "semente_arvore",
+		"tile": {
+			"index": [1, 0],
+			"layer": 0,
+			"source": 3,
+		}
+	}
+
+# retorna se a ação de plantar teve sucesso ou não
+func plantar(item) -> bool:
+	var arve = Arvore.instantiate()
+	arve.position = self.position
+	get_node("/root").add_child(arve)
+	pontos += 8
+	frontPontos.update(pontos)
+	return true
 		
-func getLixoPerto() -> void:
+func apontaLixoPerto() -> void:
 	var lixos = get_tree().get_nodes_in_group("lixo")
 	
 	if lixos.size() != 0:
@@ -95,11 +122,17 @@ func getLixoPerto() -> void:
 
 func _physics_process(delta):
 	
-	getLixoPerto()
+	apontaLixoPerto()
 	
 	var posicao: Vector2 = player.position
 	
 	circulo.rotation = posicao.angle_to_point(lixoPerto)
+
+	if Input.is_action_just_pressed("save"):
+			save["progressao_jogador"]["points"] = pontos
+			save["progressao_jogador"]["x"] = player.position.x
+			save["progressao_jogador"]["y"] = player.position.y
+			SQL.salvar(save)
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):
@@ -127,10 +160,12 @@ func _physics_process(delta):
 func areaDentro(area):
 	var obj = area.get_parent().get_parent()
 	
+	# ação de recolher o lixo
 	if obj.tipo == "Lixo":
 		obj.tempoDeVida = 0.0
 		inventario.addItem(obj)
 		pontos += 1
+	# ação de interagir com a lixeira
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()

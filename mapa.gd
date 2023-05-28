@@ -8,8 +8,8 @@ var debug: bool = true
 var x = 0
 var y = 0
 
-var w = 200
-var h = 200
+var w = 40
+var h = 40
 
 var WFCMap
 
@@ -59,4 +59,3 @@ func _ready():
 		if x >= w:
 			y += 1
 			x = 0
-		print("{x} - {y}".format({"x": x, "y": y}))
