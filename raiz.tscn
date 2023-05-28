@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://caqeo1s5t2t8p"]
+[gd_scene load_steps=11 format=3 uid="uid://caqeo1s5t2t8p"]
 
 [ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
 [ext_resource type="PackedScene" uid="uid://ciushfkc35npk" path="res://mapa.tscn" id="2_74k67"]
@@ -9,19 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://8nuh30yoi6iy" path="res://pause.tscn" id="6_ywlqb"]
 [ext_resource type="PackedScene" uid="uid://dgq0p3xrufq77" path="res://loja.tscn" id="7_gawtd"]
 [ext_resource type="PackedScene" uid="uid://dcc5m2tpyo24k" path="res://hud.tscn" id="8_is312"]
-[ext_resource type="AudioStream" uid="uid://2opi8y0mhs2b" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
-[ext_resource type="PackedScene" uid="uid://uhiqi3nw04l8" path="res://arvore.tscn" id="11_3qa2e"]
+[ext_resource type="AudioStream" uid="uid://bqo0qlhg6nyp1" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
 
 [node name="mapa" parent="." instance=ExtResource("2_74k67")]
-
-[node name="Arvore" parent="." instance=ExtResource("11_3qa2e")]
-position = Vector2(594, 299)
-
-[node name="Arvore2" parent="." instance=ExtResource("11_3qa2e")]
-position = Vector2(253, 469)
 
 [node name="Lixeira" parent="." instance=ExtResource("6_535so")]
 texture_filter = 1
@@ -34,12 +27,12 @@ position = Vector2(284, 249)
 
 [node name="Control" parent="." instance=ExtResource("4_sjf4x")]
 
-[node name="Loja" parent="." instance=ExtResource("7_gawtd")]
-visible = false
-
 [node name="HUD" parent="." instance=ExtResource("8_is312")]
 
 [node name="Inventario" parent="." instance=ExtResource("5_ap8o1")]
+visible = false
+
+[node name="Loja" parent="." instance=ExtResource("7_gawtd")]
 visible = false
 
 [node name="Pause" parent="." instance=ExtResource("6_ywlqb")]

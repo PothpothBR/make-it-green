@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq05523mnof4e"]
 
 [ext_resource type="Script" path="res://lixeira.gd" id="1_cclcn"]
-[ext_resource type="Texture2D" uid="uid://hq3rthh17k4j" path="res://resources/trash-can-in-pixel-art-style-vector.png" id="2_5ckin"]
+[ext_resource type="Texture2D" uid="uid://7vs03wu506qv" path="res://resources/trash-can-in-pixel-art-style-vector.png" id="2_5ckin"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtux6"]
 radius = 3.88889
