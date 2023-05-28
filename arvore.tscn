@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://uhiqi3nw04l8"]
+[gd_scene load_steps=6 format=3 uid="uid://uhiqi3nw04l8"]
 
 [ext_resource type="Script" path="res://arvore.gd" id="1_d7tia"]
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_hs4lj"]
+[ext_resource type="Texture2D" uid="uid://inclqiu147o4" path="res://resources/Arvorezinha2.png" id="3_64ri7"]
+[ext_resource type="Texture2D" uid="uid://7a61vuuplmhu" path="res://resources/Sprit-Itens.png" id="4_e6lqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kh34m"]
 radius = 11.0
@@ -10,7 +12,8 @@ height = 48.0
 [node name="Arvore" type="Node2D"]
 script = ExtResource("1_d7tia")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Arvore" type="TileMap" parent="."]
+visible = false
 position = Vector2(2, -19)
 tile_set = ExtResource("1_hs4lj")
 format = 2
@@ -25,9 +28,25 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(65535, 655367, 6, 0, 720903, 6)
 
+[node name="Muda" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -24)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_64ri7")
+
+[node name="Semente" type="Sprite2D" parent="."]
+texture = ExtResource("4_e6lqt")
+region_enabled = true
+region_rect = Rect2(64, 64, 32, 32)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 4096
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_kh34m")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
