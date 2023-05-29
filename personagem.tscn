@@ -1,8 +1,8 @@
 [gd_scene load_steps=42 format=3 uid="uid://dvlweejf5trdf"]
 
 [ext_resource type="Script" path="res://Personagem.gd" id="1_08jtd"]
-[ext_resource type="Texture2D" uid="uid://dm3himllvj7j1" path="res://resources/character.png" id="2_486j0"]
-[ext_resource type="Texture2D" uid="uid://c7saylxq4cso0" path="res://resources/UI/arrow.png" id="3_bltlj"]
+[ext_resource type="Texture2D" uid="uid://sh351yr4qh73" path="res://resources/character.png" id="2_486j0"]
+[ext_resource type="Texture2D" uid="uid://btu40yer5a1gx" path="res://resources/UI/arrow.png" id="3_bltlj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tn3vh"]
 atlas = ExtResource("2_486j0")
@@ -285,6 +285,10 @@ frame = 7
 frame_progress = 0.56139
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 6400
+limit_bottom = 6400
 position_smoothing_enabled = true
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
