@@ -64,11 +64,20 @@ static func migrar():
 static func salvar(save):
 	var db = openDb()
 	
-	var selected = db.select_rows("saves", "", ["*"])
+	var selected = db.select_rows("saves", "id = {0}".format({"0": save["saves"]["id"]}), ["*"])
 	if selected.is_empty():
-		db.insert_row("saves", save["saves"])
-	db.delete_rows("progressao_jogador", "id_saves = 1")
-	db.insert_row("progressao_jogador", save["progressao_jogador"])
+		var n = {
+			"data": save["saves"]["data"],
+			"dificuldade": save["saves"]["dificuldade"]
+		}
+		db.insert_row("saves", n)
+		
+		selected = db.select_rows("saves", "", ["*"])
+		save["progressao_jogador"]["id_saves"] = selected[-1]["id"]
+		db.insert_row("progressao_jogador", save["progressao_jogador"])
+	else:
+		db.delete_rows("progressao_jogador", "id_saves = {0}".format({"0": save["save"]["id"]}))
+		db.insert_row("progressao_jogador", save["progressao_jogador"])
 	
 	db.close_db()
 	

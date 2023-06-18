@@ -288,8 +288,8 @@ frame_progress = 0.56139
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 6400
-limit_bottom = 6400
+limit_right = 3200
+limit_bottom = 3200
 position_smoothing_enabled = true
 
 [node name="Colisao" type="CollisionShape2D" parent="."]

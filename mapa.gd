@@ -8,8 +8,8 @@ var debug: bool = true
 var x = 0
 var y = 0
 
-var w = 40
-var h = 40
+var w = 100
+var h = 100
 
 var WFCMap
 

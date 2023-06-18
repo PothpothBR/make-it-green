@@ -17,6 +17,7 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 
 @onready var save = {
 	"saves": {
+		"id": 1,
 		"data": "aaa",
 		"dificuldade": "easy"
 	},
@@ -29,16 +30,20 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 	}
 }
 
+@onready var player = get_node("Personagem")
+@onready var Pontos = get_node("HUD/Pontos")
+@onready var salvar = get_node("Salvar")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
-	var player = get_tree().get_nodes_in_group("player")[0]
-	var objetivos = get_tree().get_nodes_in_group("objetivos")[0]
+	var objetivos = get_node("HUD/Objetivos")
 	var interativo = get_tree().get_nodes_in_group("menu_interativo")
 	var lixeira = get_tree().get_nodes_in_group("lixeira")
-	var Pontos = get_node("HUD/Pontos")
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
+	
+	Global.player = player
 	
 	if Global.load:
 		save = Save.carregar(save)
@@ -70,6 +75,8 @@ func _ready():
 	pause.player = player
 	
 	inventario.gameState = gameState
+	
+	salvar.save = save
 
 func gerarLixo(count, x, y):
 	print("instanciando: ", count - 1, " lixo...")
@@ -86,6 +93,10 @@ func gerarLixo(count, x, y):
 		add_child(lixo)
 		
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("save"):
+			salvar.visible = !salvar.visible
+			
 	if Input.is_action_just_pressed("inventory") or Input.is_action_just_pressed("temp"):
 			for i in hud.get_children():
 				i.visible = !i.visible

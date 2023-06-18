@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctbcm03luvuus"]
+
+[ext_resource type="Script" path="res://Item.gd" id="1_wsvn3"]
+[ext_resource type="Texture2D" uid="uid://b4nfe7qahihow" path="res://resources/spritesheet-lixo.png" id="2_j0fti"]
+
+[node name="Item" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_wsvn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j0fti")
+centered = false
+hframes = 47
+
+[node name="Button" type="Button" parent="."]
+offset_right = 32.0
+offset_bottom = 32.0
+flat = true
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
