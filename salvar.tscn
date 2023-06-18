@@ -1,9 +1,27 @@
-[gd_scene format=3 uid="uid://dooogx6fcko3l"]
+[gd_scene load_steps=2 format=3 uid="uid://x6t6sir7oudu"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
+[ext_resource type="Script" path="res://salvar.gd" id="1_vedem"]
+
+[node name="Salvar" type="CanvasLayer"]
+script = ExtResource("1_vedem")
+
+[node name="ItemList" type="ItemList" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -99.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "Novo Save"
+
+[connection signal="item_selected" from="ItemList" to="." method="selecionaSave"]
+[connection signal="pressed" from="Button" to="." method="novoSave"]

@@ -48,6 +48,7 @@ size_flags_vertical = 4
 text = "Return"
 
 [node name="Salvar" type="Button" parent="Control/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Salvar"
 
