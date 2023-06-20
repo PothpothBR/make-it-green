@@ -17,7 +17,7 @@ layout_mode = 2
 size_flags_vertical = 3
 same_column_width = true
 
-[node name="Sementes" type="ItemList" parent="VBoxContainer"]
+[node name="Itens" type="ItemList" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 max_columns = 7
