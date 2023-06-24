@@ -3,6 +3,11 @@ extends CanvasLayer
 @onready var arrLixos: Array[String] = []
 @onready var lixos: ItemList = get_node('VBoxContainer/Lixos')
 
+var player
+var raiz
+var tamanhoSementes = 10
+var tamanho = 0
+
 @onready var arrSementes: Array[Dictionary] = [
 	{
 		"type": "semente_arvore1",
@@ -24,9 +29,7 @@ extends CanvasLayer
 @onready var sementes: ItemList = get_node('VBoxContainer/Sementes')
 
 func _ready():
-	sementes.add_item(arrSementes[0]["type"])
-	sementes.add_item(arrSementes[1]["type"])
-
+	pass
 
 var gameState
 
@@ -37,3 +40,18 @@ func addItem(lixo: Node2D) -> void:
 func clear() -> void:
 	lixos.clear()
 	arrLixos.clear()
+
+
+func _on_sementes_item_clicked(index, at_position, mouse_button_index):
+	var id = sementes.get_item_metadata(index)
+	if id == 1:
+		player.plantarArvore()
+	elif id == 2:
+		player.plantarArbusto()
+	elif id == 3:
+		player.regar()
+	elif id == 4:
+		player.adubar()
+	self.visible = false
+	tamanho -= 1
+	sementes.remove_item(index)

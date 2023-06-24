@@ -22,3 +22,5 @@ layout_mode = 2
 size_flags_vertical = 3
 max_columns = 7
 same_column_width = true
+
+[connection signal="item_clicked" from="VBoxContainer/Sementes" to="." method="_on_sementes_item_clicked"]

@@ -57,6 +57,40 @@ static func criar():
 		"valor": {"data_type": "real"}
 	})
 	
+	db.insert_rows("itens", [{
+		"id": 1,
+		"nome": "Semente de Árvore",
+		"valor": 20,
+	}, {
+		"id": 2,
+		"nome": "Semente de Arbusto",
+		"valor": 10,
+	}, {
+		"id": 3,
+		"nome": "Regador",
+		"valor": 400,
+	}, {
+		"id": 4,
+		"nome": "Fertilizante",
+		"valor": 10,
+	}, {
+		"id": 5,
+		"nome": "Mochila Marrom",
+		"valor": 50,
+	}, {
+		"id": 6,
+		"nome": "Mochila Verde",
+		"valor": 100,
+	}, {
+		"id": 7,
+		"nome": "Moxila roxa",
+		"valor": 500,
+	}, {
+		"id": 8,
+		"nome": "Mochila Azul",
+		"valor": 1000,
+	},])
+	
 static func migrar():
 	var db = openDb()
 	pass
