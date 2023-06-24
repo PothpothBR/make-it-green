@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn8mx3cxt6i5v"]
+[gd_scene load_steps=6 format=3 uid="uid://cn8mx3cxt6i5v"]
 
 [ext_resource type="Script" path="res://Arbusto.gd" id="1_ytvwu"]
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="2_stsr0"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqwbw"]
 radius = 11.0
 height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ovbd"]
+radius = 46.0109
 
 [node name="Arbusto" type="Node2D"]
 script = ExtResource("1_ytvwu")
@@ -43,5 +46,12 @@ shape = SubResource("CapsuleShape2D_sqwbw")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16384
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7ovbd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

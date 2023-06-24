@@ -13,7 +13,7 @@ extends CharacterBody2D
 const Arvore: PackedScene = preload("res://arvore.tscn")
 const Arbusto: PackedScene = preload("res://Arbusto.tscn")
 
-var arvoreAtual = null
+var plantaAtual = []
 
 var lixoTotal = 0
 var lixoAtual = 0
@@ -93,6 +93,14 @@ func plantarArbusto() -> bool:
 	get_node("/root").add_child(arbo)
 	objetivos.plantar(1)
 	return true
+	
+func regar():
+	var planta = plantaAtual.pop_front()
+	if planta: planta.regar()
+	
+func adubar():
+	var planta = plantaAtual.pop_front()
+	if planta: planta.adubar()
 		
 func apontaLixoPerto() -> void:
 	var lixos = get_tree().get_nodes_in_group("lixo")
@@ -119,7 +127,7 @@ func updateHUD():
 	for i in hud.get_children():
 		i.visible = !i.visible
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	apontaLixoPerto()
 	
@@ -155,7 +163,6 @@ func _physics_process(delta):
 
 func areaDentro(area):
 	var obj = area.get_parent().get_parent()
-	
 	# ação de recolher o lixo
 	if obj.tipo == "Lixo":
 		obj.tempoDeVida = 0.0
@@ -166,7 +173,16 @@ func areaDentro(area):
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()
-	# acção de regar
-	elif obj.tipo == "Arvore" || obj.tipo == "Arbusto":
-		arvoreAtual = obj
-		print(obj)
+
+func _on_planta_area_entered(area):
+	var obj = area.get_parent()
+	if obj.tipo == "Planta":
+		plantaAtual.append(obj)
+		print(plantaAtual)
+
+
+func _on_planta_area_exited(area):
+	var obj = area.get_parent()
+	if obj.tipo == "Planta":
+		plantaAtual.remove_at(plantaAtual.find(obj))
+		print(plantaAtual)

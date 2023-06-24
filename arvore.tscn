@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://uhiqi3nw04l8"]
+[gd_scene load_steps=7 format=3 uid="uid://uhiqi3nw04l8"]
 
 [ext_resource type="Script" path="res://arvore.gd" id="1_d7tia"]
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_hs4lj"]
-[ext_resource type="Texture2D" uid="uid://bplnpmrl2pkmj" path="res://resources/Arvorezinha2.png" id="3_64ri7"]
-[ext_resource type="Texture2D" uid="uid://cceelwiis1ocs" path="res://resources/Sprit-Itens.png" id="4_e6lqt"]
+[ext_resource type="Texture2D" uid="uid://inclqiu147o4" path="res://resources/Arvorezinha2.png" id="3_64ri7"]
+[ext_resource type="Texture2D" uid="uid://7a61vuuplmhu" path="res://resources/Sprit-Itens.png" id="4_e6lqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kh34m"]
 radius = 11.0
 height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xnjwp"]
+radius = 44.0114
 
 [node name="Arvore" type="Node2D"]
 z_as_relative = false
@@ -52,5 +55,12 @@ shape = SubResource("CapsuleShape2D_kh34m")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16384
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xnjwp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

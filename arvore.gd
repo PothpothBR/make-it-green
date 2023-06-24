@@ -2,6 +2,7 @@ extends Node2D
 
 var regado = false
 var adubado = false
+var tipo = "Planta"
 
 var semente: bool = true
 var muda: bool = false

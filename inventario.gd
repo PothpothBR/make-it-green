@@ -53,6 +53,9 @@ func _on_sementes_item_clicked(index, at_position, mouse_button_index):
 		player.regar()
 	elif id == 4:
 		player.adubar()
-	self.visible = false
+	visible = false
+	gameState["inventario"] = !gameState["inventario"]
+	player.animacao.stop()
+	player.updateHUD()
 	tamanho -= 1
 	sementes.remove_item(index)
