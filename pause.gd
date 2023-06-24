@@ -3,6 +3,9 @@ extends CanvasLayer
 const SQL = preload("res://sqlite_teste.gd")
 
 @onready var pause = get_node(".")
+@onready var salvarScn = get_node("Salvar")
+@onready var voltarBtn = get_node("Voltar")
+@onready var menu = get_node("Control")
 
 var player
 var gameState
@@ -23,4 +26,10 @@ func sair():
 
 
 func salvar():
-	pass # Replace with function body.
+	menu.visible = false
+	salvarScn.visible = true
+
+
+func voltarPause():
+	salvarScn.visible = false
+	menu.visible = true
