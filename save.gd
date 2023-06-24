@@ -76,7 +76,7 @@ static func salvar(save):
 		save["progressao_jogador"]["id_saves"] = selected[-1]["id"]
 		db.insert_row("progressao_jogador", save["progressao_jogador"])
 	else:
-		db.delete_rows("progressao_jogador", "id_saves = {0}".format({"0": save["save"]["id"]}))
+		db.delete_rows("progressao_jogador", "id_saves = {0}".format({"0": save["saves"]["id"]}))
 		db.insert_row("progressao_jogador", save["progressao_jogador"])
 	
 	db.close_db()

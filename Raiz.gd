@@ -32,7 +32,7 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 
 @onready var player = get_node("Personagem")
 @onready var Pontos = get_node("HUD/Pontos")
-@onready var salvar = get_node("Salvar")
+var salvar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +42,7 @@ func _ready():
 	var lixeira = get_tree().get_nodes_in_group("lixeira")
 	var pause = get_node("Pause")
 	var loja = get_node("Loja")
+	salvar = pause.salvarScn
 	
 	Global.player = player
 	
