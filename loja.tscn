@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgq0p3xrufq77"]
 
 [ext_resource type="Script" path="res://loja.gd" id="1_qlom6"]
-[ext_resource type="Texture2D" uid="uid://b46gm1w0ndm33" path="res://resources/Sprit-Itens.png" id="2_8q8wy"]
+[ext_resource type="Texture2D" uid="uid://cceelwiis1ocs" path="res://resources/Sprit-Itens.png" id="2_8q8wy"]
 
 [node name="Loja" type="CanvasLayer" groups=["menu_interativo"]]
 scale = Vector2(1, 0.95)
@@ -126,7 +126,7 @@ text = "Regador"
 [node name="valor" type="Label" parent="Control/VBoxContainer/Items de Plantação/Regador"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "2"
+text = "5"
 
 [node name="Button" type="Button" parent="Control/VBoxContainer/Items de Plantação/Regador"]
 layout_mode = 2
@@ -157,7 +157,7 @@ text = "Fertilizante"
 [node name="valor" type="Label" parent="Control/VBoxContainer/Items de Plantação/Fertilizante"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "2"
+text = "20"
 
 [node name="Button" type="Button" parent="Control/VBoxContainer/Items de Plantação/Fertilizante"]
 layout_mode = 2
@@ -192,7 +192,7 @@ text = "Mochila Marrom"
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 1"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "2"
+text = "5"
 
 [node name="Button" type="Button" parent="Control/VBoxContainer/Mochilas/Mochila 1"]
 layout_mode = 2
@@ -223,7 +223,7 @@ text = "Mochila Verde"
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "2"
+text = "10"
 
 [node name="Button" type="Button" parent="Control/VBoxContainer/Mochilas/Mochila 2"]
 layout_mode = 2
@@ -254,7 +254,7 @@ text = "Mochila Roxa"
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 3"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "2"
+text = "20"
 
 [node name="Button" type="Button" parent="Control/VBoxContainer/Mochilas/Mochila 3"]
 layout_mode = 2
@@ -285,7 +285,7 @@ text = "Mochila Azul"
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 4"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "2"
+text = "50"
 
 [node name="Button" type="Button" parent="Control/VBoxContainer/Mochilas/Mochila 4"]
 layout_mode = 2

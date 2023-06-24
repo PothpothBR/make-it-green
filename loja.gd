@@ -6,14 +6,18 @@ var gameState
 var inventarioItens: ItemList
 var inventario
 
+@onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
+
+@onready var labelPontos = get_node("pontos")
+
 @onready var regador = get_node("Control/VBoxContainer/Items de Plantação/Regador")
 @onready var mochila_marrom = get_node("Control/VBoxContainer/Mochilas/Mochila 1")
 @onready var mochila_verde = get_node("Control/VBoxContainer/Mochilas/Mochila 2")
 @onready var mochila_roxa = get_node("Control/VBoxContainer/Mochilas/Mochila 3")
 @onready var mochila_azul= get_node("Control/VBoxContainer/Mochilas/Mochila 4")
 
-func _ready():
-	pass
+func _physics_process(delta):
+	labelPontos.set_text("Pontos: {pontos}".format({"pontos": Pontos.pontos}))
 
 func adicionar_item(x, y, id: int):
 	if inventario.tamanho >= inventario.tamanhoSementes:
@@ -32,32 +36,48 @@ func adicionar_item(x, y, id: int):
 	
 #-----------------itens de plantação-----------------
 func on_comprar_semente_arvore():
-	adicionar_item(0, 0, 1)
+	if (Pontos.pontos >= 2):
+		Pontos.remover(2)
+		adicionar_item(0, 0, 1)
 
 func on_comprar_semente_arbusto():
-	adicionar_item(128, 0, 2)
+	if (Pontos.pontos >= 2):
+		Pontos.remover(2)
+		adicionar_item(128, 0, 2)
 	
 func on_comprar_regador():
-	adicionar_item(64, 0, 3)
-	inventario.temRegador = true
-	regador.visible = false
+	if (Pontos.pontos >= 5):
+		Pontos.remover(5)
+		adicionar_item(64, 0, 3)
+		inventario.temRegador = true
+		regador.visible = false
 	
 func on_comprar_fertilizante():
-	adicionar_item(32, 0, 4)
+	if (Pontos.pontos >= 20):
+		Pontos.remover(20)
+		adicionar_item(32, 0, 4)
 	
 #-----------------Mochilas-----------------
 func on_comprar_mochila_1():
-	inventario.tamanhoSementes = 20
-	mochila_marrom.visible = false
+	if (Pontos.pontos >= 5):
+		Pontos.remover(5)
+		inventario.tamanhoSementes = 20
+		mochila_marrom.visible = false
 	
 func on_comprar_mochila_2():
-	inventario.tamanhoSementes = 30
-	mochila_verde.visible = false
+	if (Pontos.pontos >= 10):
+		Pontos.remover(10)
+		inventario.tamanhoSementes = 30
+		mochila_verde.visible = false
 
 func on_comprar_mochila_3():
-	inventario.tamanhoSementes = 40
-	mochila_roxa.visible = false
+	if (Pontos.pontos >= 20):
+		Pontos.remover(20)
+		inventario.tamanhoSementes = 40
+		mochila_roxa.visible = false
 
 func on_comprar_mochila_4():
-	inventario.tamanhoSementes = 50
-	mochila_azul.visible = false
+	if (Pontos.pontos >= 50):
+		Pontos.remover(50)
+		inventario.tamanhoSementes = 50
+		mochila_azul.visible = false
