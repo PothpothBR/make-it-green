@@ -2,8 +2,17 @@ extends CanvasLayer
 
 var gameState
 #itens do inventario
+
 var inventarioItens: ItemList
 var inventario
+
+
+@onready var regador = get_node("Control/VBoxContainer/Items de Plantação/Regador")
+@onready var mochila_marrom = get_node("Control/VBoxContainer/Mochilas/Mochila 1")
+@onready var mochila_verde = get_node("Control/VBoxContainer/Mochilas/Mochila 2")
+@onready var mochila_roxa = get_node("Control/VBoxContainer/Mochilas/Mochila 3")
+@onready var mochila_azul= get_node("Control/VBoxContainer/Mochilas/Mochila 4")
+
 
 func _ready():
 	pass
@@ -31,13 +40,18 @@ func on_comprar_semente_arbusto():
 	adicionar_item(128, 0, 2)
 	
 func on_comprar_regador():
+<<<<<<< Updated upstream
 	inventario.temRegador = true
+=======
+	regador.visible = false
+>>>>>>> Stashed changes
 	
 func on_comprar_fertilizante():
 	adicionar_item(32, 0, 4)
 	
 #-----------------Mochilas-----------------
 func on_comprar_mochila_1():
+<<<<<<< Updated upstream
 	inventario.tamanhoSementes = 20
 	# remover moxila
 	
@@ -53,3 +67,19 @@ func on_comprar_mochila_4():
 	inventario.tamanhoSementes = 50
 	# remover moxila
 
+=======
+	adicionar_item("Mochila Marrom", 0, 30)
+	mochila_marrom.visible = false
+	
+func on_comprar_mochila_2():
+	adicionar_item("mochila Verde", 33, 33)
+	mochila_verde.visible = false
+	
+func on_comprar_mochila_3():
+	adicionar_item("Mochila Roxa", 98, 31)
+	mochila_roxa.visible = false
+	
+func on_comprar_mochila_4():
+	adicionar_item("Mochila Azul", 130, 30)
+	mochila_azul.visible = false
+>>>>>>> Stashed changes
