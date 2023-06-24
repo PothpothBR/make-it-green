@@ -76,6 +76,11 @@ func _ready():
 	pause.player = player
 	
 	inventario.gameState = gameState
+	inventario.player = player
+	inventario.raiz = self
+	
+	loja.inventarioItens = inventario.get_node('VBoxContainer/Sementes')
+	loja.inventario = inventario
 	
 	salvar.save = save
 
@@ -92,12 +97,11 @@ func gerarLixo(count, x, y):
 			randf_range(geracaoLixoPadding, window_size[1]-geracaoLixoPadding)
 		)
 		add_child(lixo)
-		
+
 func _physics_process(delta):
-	
 	if Input.is_action_just_pressed("save"):
-			salvar.visible = !salvar.visible
+		salvar.visible = !salvar.visible
 			
 	if Input.is_action_just_pressed("inventory") or Input.is_action_just_pressed("temp"):
-			for i in hud.get_children():
-				i.visible = !i.visible
+		for i in hud.get_children():
+			i.visible = !i.visible

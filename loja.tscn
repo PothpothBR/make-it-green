@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgq0p3xrufq77"]
 
 [ext_resource type="Script" path="res://loja.gd" id="1_qlom6"]
-[ext_resource type="Texture2D" uid="uid://cceelwiis1ocs" path="res://resources/Sprit-Itens.png" id="2_8q8wy"]
+[ext_resource type="Texture2D" uid="uid://7a61vuuplmhu" path="res://resources/Sprit-Itens.png" id="2_8q8wy"]
 
 [node name="Loja" type="CanvasLayer" groups=["menu_interativo"]]
 scale = Vector2(1, 0.95)
@@ -187,7 +187,7 @@ frame = 5
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 1"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 1"
+text = "Mochila Marrom"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 1"]
 layout_mode = 2
@@ -218,7 +218,7 @@ frame = 7
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 2"
+text = "Mochila Verde"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 2"]
 layout_mode = 2
@@ -249,7 +249,7 @@ frame = 8
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 3"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 3"
+text = "Mochila Roxa"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 3"]
 layout_mode = 2
@@ -280,7 +280,7 @@ frame = 9
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 4"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 4"
+text = "Mochila Azul"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 4"]
 layout_mode = 2
@@ -291,3 +291,12 @@ text = "2"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Comprar"
+
+[connection signal="button_up" from="Control/VBoxContainer/Items de Plantação/Semente de Arvore/Button" to="." method="on_comprar_semente_arvore"]
+[connection signal="button_up" from="Control/VBoxContainer/Items de Plantação/Semente de Arbusto/Button" to="." method="on_comprar_semente_arbusto"]
+[connection signal="button_up" from="Control/VBoxContainer/Items de Plantação/Regador/Button" to="." method="on_comprar_regador"]
+[connection signal="button_up" from="Control/VBoxContainer/Items de Plantação/Fertilizante/Button" to="." method="on_comprar_fertilizante"]
+[connection signal="button_up" from="Control/VBoxContainer/Mochilas/Mochila 1/Button" to="." method="on_comprar_mochila_1"]
+[connection signal="button_up" from="Control/VBoxContainer/Mochilas/Mochila 2/Button" to="." method="on_comprar_mochila_2"]
+[connection signal="button_up" from="Control/VBoxContainer/Mochilas/Mochila 3/Button" to="." method="on_comprar_mochila_3"]
+[connection signal="button_up" from="Control/VBoxContainer/Mochilas/Mochila 4/Button" to="." method="on_comprar_mochila_4"]

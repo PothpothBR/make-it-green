@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn8mx3cxt6i5v"]
+
+[ext_resource type="Script" path="res://Arbusto.gd" id="1_ytvwu"]
+[ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="2_stsr0"]
+[ext_resource type="Texture2D" uid="uid://7a61vuuplmhu" path="res://resources/Sprit-Itens.png" id="3_tj3gq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqwbw"]
+radius = 11.0
+height = 48.0
+
+[node name="Arbusto" type="Node2D"]
+script = ExtResource("1_ytvwu")
+
+[node name="Arbusto" type="TileMap" parent="."]
+visible = false
+position = Vector2(2, -19)
+tile_set = ExtResource("2_stsr0")
+format = 2
+layer_0/name = "Copa"
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(-196610, 589831, 2, -131074, 458752, 14, -65538, 458752, 14, -2, 458752, 14, 65534, 458752, 14, -196609, 458752, 14, -131073, 458752, 14, -65537, 458752, 14, -1, 458752, 14, -262144, 458752, 14, -196608, 458752, 14, -131072, 458752, 14, -65536, 458752, 14, -262143, 786439, 2, -196607, 458752, 14, -131071, 458752, 14, -65535, 458752, 14, 1, 458752, 14, -131075, 458752, 14, -65539, 458752, 14, -3, 458752, 14, -65534, 458752, 14, -65533, 458752, 14, 65533, 458752, 14, 65535, 458752, 14, 0, 458752, 14, 2, 458752, 14)
+layer_1/name = "tronco"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(65535, 196614, 1, 0, 262150, 1, 1, 458752, 14, 65534, 458752, 14, 65533, 458752, 14, -1, 196614, 0, -65536, 262150, 0)
+
+[node name="Semente" type="Sprite2D" parent="."]
+z_as_relative = false
+texture = ExtResource("3_tj3gq")
+region_enabled = true
+region_rect = Rect2(128, 0, 32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(-1, -13)
+scale = Vector2(1, 1.4)
+shape = SubResource("CapsuleShape2D_sqwbw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

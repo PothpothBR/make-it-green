@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
 
 const Arvore: PackedScene = preload("res://arvore.tscn")
+const Arbusto: PackedScene = preload("res://Arbusto.tscn")
 
 var lixoTotal = 0
 var lixoAtual = 0
@@ -74,25 +75,19 @@ func interagir() -> void:
 	interacao.disabled = true
 	if Input.is_action_just_pressed("interact"):
 		interacao.disabled = false
-	if Input.is_action_just_pressed("plantar"):
-		if not plantar(selecionar_semente()):
-			pass
-
-func selecionar_semente():
-	return {
-		"type": "semente_arvore",
-		"tile": {
-			"index": [1, 0],
-			"layer": 0,
-			"source": 3,
-		}
-	}
 
 # retorna se a ação de plantar teve sucesso ou não
-func plantar(item) -> bool:
+func plantarArvore() -> bool:
 	var arve = Arvore.instantiate()
 	arve.position = self.position
 	get_node("/root").add_child(arve)
+	objetivos.plantar(1)
+	return true
+	
+func plantarArbusto() -> bool:
+	var arbo = Arbusto.instantiate()
+	arbo.position = self.position
+	get_node("/root").add_child(arbo)
 	objetivos.plantar(1)
 	return true
 		
@@ -127,10 +122,14 @@ func _physics_process(delta):
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):
+			if loja.visible:
+				loja.visible = false
 			inventario.visible = !(inventario.visible)
 			gameState["inventario"] = !gameState["inventario"]
 			animacao.stop()
 		if Input.is_action_just_pressed("temp"):
+			if inventario.visible:
+				inventario.visible = false
 			loja.visible = !(loja.visible)
 			gameState["inventario"] = !gameState["inventario"]
 			print(loja.visible)
