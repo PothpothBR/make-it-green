@@ -76,6 +76,8 @@ func _ready():
 	
 	inventario.gameState = gameState
 	
+	loja.inventarioItens = inventario.get_node('VBoxContainer/Sementes')
+	
 	salvar.save = save
 
 func gerarLixo(count, x, y):
