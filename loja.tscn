@@ -187,7 +187,7 @@ frame = 5
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 1"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 1"
+text = "Mochila Marrom"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 1"]
 layout_mode = 2
@@ -218,7 +218,7 @@ frame = 7
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 2"
+text = "Mochila Verde"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 2"]
 layout_mode = 2
@@ -249,7 +249,7 @@ frame = 8
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 3"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 3"
+text = "Mochila Roxa"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 3"]
 layout_mode = 2
@@ -280,7 +280,7 @@ frame = 9
 [node name="nome" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 4"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mochila 4"
+text = "Mochila Azul"
 
 [node name="valor" type="Label" parent="Control/VBoxContainer/Mochilas/Mochila 4"]
 layout_mode = 2
