@@ -57,6 +57,8 @@ func _ready():
 #	lixoPerto(player)
 	
 	for i in interativo:
+		print(i)
+		print(i.gameState)
 		i.gameState = gameState
 	for i in lixeira:
 		i.personagem = player
