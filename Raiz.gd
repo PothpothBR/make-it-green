@@ -70,6 +70,7 @@ func _ready():
 	player.lixoAtual = contagemLixo
 	player.loja = loja
 	player.save = save
+	player.hud = hud
 	player.objetivos = objetivos
 	
 	pause.gameState = gameState
@@ -102,6 +103,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("save"):
 		salvar.visible = !salvar.visible
 			
-	if Input.is_action_just_pressed("inventory") or Input.is_action_just_pressed("temp"):
-		for i in hud.get_children():
-			i.visible = !i.visible
+#	if Input.is_action_just_pressed("inventory") or Input.is_action_just_pressed("temp"):
+#		for i in hud.get_children():
+#			i.visible = !i.visible
