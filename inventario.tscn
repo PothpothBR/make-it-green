@@ -23,4 +23,13 @@ size_flags_vertical = 3
 max_columns = 7
 same_column_width = true
 
+[node name="espaço_inventario" type="RichTextLabel" parent="."]
+offset_right = 101.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "Espaço Livre:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [connection signal="item_clicked" from="VBoxContainer/Sementes" to="." method="_on_sementes_item_clicked"]
