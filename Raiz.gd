@@ -9,6 +9,8 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 @onready var inventario = get_node("Inventario")
 @onready var hud = get_node("HUD")
 
+@onready var musica: AudioStreamPlayer = get_node("AudioStreamPlayer")
+
 @onready var gameState = {
 	"pause": false,
 	"inventario": false,
@@ -86,6 +88,7 @@ func _ready():
 	loja.inventario = inventario
 	
 	salvar.save = save
+	musica.play()
 
 func gerarLixo(count, x, y):
 	print("instanciando: ", count - 1, " lixo...")
