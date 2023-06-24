@@ -31,7 +31,7 @@ func on_comprar_semente_arbusto():
 	adicionar_item(128, 0, 2)
 	
 func on_comprar_regador():
-	adicionar_item(64, 0, 3)
+	inventario.temRegador = true
 	
 func on_comprar_fertilizante():
 	adicionar_item(32, 0, 4)

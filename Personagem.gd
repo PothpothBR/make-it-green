@@ -13,6 +13,8 @@ extends CharacterBody2D
 const Arvore: PackedScene = preload("res://arvore.tscn")
 const Arbusto: PackedScene = preload("res://Arbusto.tscn")
 
+var arvoreAtual = null
+
 var lixoTotal = 0
 var lixoAtual = 0
 
@@ -122,14 +124,12 @@ func _physics_process(delta):
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):
-			if loja.visible:
-				loja.visible = false
+			if loja.visible: return
 			inventario.visible = !(inventario.visible)
 			gameState["inventario"] = !gameState["inventario"]
 			animacao.stop()
 		if Input.is_action_just_pressed("temp"):
-			if inventario.visible:
-				inventario.visible = false
+			if inventario.visible: return
 			loja.visible = !(loja.visible)
 			gameState["inventario"] = !gameState["inventario"]
 			print(loja.visible)
@@ -160,3 +160,7 @@ func areaDentro(area):
 	elif obj.tipo == "Lixeira":
 		obj.add(inventario)
 		inventario.clear()
+	# acção de regar
+	elif obj.tipo == "Arvore" || obj.tipo == "Arbusto":
+		arvoreAtual = obj
+		print(obj)

@@ -1,5 +1,8 @@
 extends Node2D
 
+var regado = false
+var adubado = false
+
 var semente: bool = true
 var muda: bool = false
 @onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
@@ -34,3 +37,15 @@ func _on_timer_timeout():
 		get_node("Muda").visible = false
 		get_node("Arvore").visible = true
 		Pontos.adicionar(8)
+
+func regar():
+	if !regado:
+		regado = true
+		var timer = get_node("Timer")
+		timer.set_wait_time(5)
+		timer.start()
+
+func adubar():
+	if !adubado:
+		_on_timer_timeout()
+		adubado = true

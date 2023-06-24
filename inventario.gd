@@ -7,6 +7,7 @@ var player
 var raiz
 var tamanhoSementes = 10
 var tamanho = 0
+var temRegador = false
 
 @onready var arrSementes: Array[Dictionary] = [
 	{
