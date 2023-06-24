@@ -27,6 +27,7 @@ var save
 
 var pause
 var loja
+var hud
 
 func mover() -> void:
 	if Input.is_action_pressed("ui_shift"):
@@ -111,6 +112,10 @@ func apontaLixoPerto() -> void:
 		player.lixoPerto = minVec
 	else:
 		seta.visible = false
+		
+func updateHUD():
+	for i in hud.get_children():
+		i.visible = !i.visible
 
 func _physics_process(delta):
 	
@@ -122,18 +127,17 @@ func _physics_process(delta):
 	
 	if !gameState["pause"]:
 		if Input.is_action_just_pressed("inventory"):
-			if loja.visible:
-				loja.visible = false
-			inventario.visible = !(inventario.visible)
-			gameState["inventario"] = !gameState["inventario"]
-			animacao.stop()
+			if !loja.visible:
+				inventario.visible = !(inventario.visible)
+				gameState["inventario"] = !gameState["inventario"]
+				animacao.stop()
+				updateHUD()
 		if Input.is_action_just_pressed("temp"):
-			if inventario.visible:
-				inventario.visible = false
-			loja.visible = !(loja.visible)
-			gameState["inventario"] = !gameState["inventario"]
-			print(loja.visible)
-			animacao.stop()
+			if !inventario.visible:
+				loja.visible = !(loja.visible)
+				gameState["inventario"] = !gameState["inventario"]
+				animacao.stop()
+				updateHUD()
 
 		if !gameState["inventario"]:
 			interagir()
