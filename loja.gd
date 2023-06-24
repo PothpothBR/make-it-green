@@ -18,26 +18,24 @@ func on_comprar_semente_arvore():
 	adicionar_item("Árvore",0, 0)
 
 func on_comprar_semente_arbusto():
-	pass
+	adicionar_item("Arbusto",128, 0)
+	
 func on_comprar_regador():
-	var texture  = AtlasTexture.new()
-	var sprite = Sprite2D.new()
+	adicionar_item("Regador", 62, 0)
 	
 func on_comprar_fertilizante():
-	adicionar_item("fertilizante", 32, 0)
+	adicionar_item("Fertilizante", 32, 0)
+	
 #-----------------Mochilas-----------------
 func on_comprar_mochila_1():
-	var texture  = AtlasTexture.new()
-	var sprite = Sprite2D.new()
+	adicionar_item("Mochila Marrom", 0, 30)
+	
 func on_comprar_mochila_2():
-	var texture  = AtlasTexture.new()
-	var sprite = Sprite2D.new()
+	adicionar_item("mochila Verde", 33, 33)
 
 func on_comprar_mochila_3():
-	var texture  = AtlasTexture.new()
-	var sprite = Sprite2D.new()
+	adicionar_item("Mochila Roxa", 98, 31)
 
 func on_comprar_mochila_4():
-	var texture  = AtlasTexture.new()
-	var sprite = Sprite2D.new()
+	adicionar_item("Mochila Azul", 130, 30)
 
