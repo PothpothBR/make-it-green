@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_8g0o4"]
 [ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="1_cc3ki"]
-[ext_resource type="Texture2D" uid="uid://6ob0uqdxkgfv" path="res://resources/makeitgreenlogo.png" id="3_8b6ye"]
+[ext_resource type="Texture2D" uid="uid://dlmdb5iu7wpu1" path="res://resources/makeitgreenlogo.png" id="3_8b6ye"]
 [ext_resource type="Theme" uid="uid://smvv41fgogvy" path="res://resources/UI/UI_teste/theme_button.tres" id="3_cmbn0"]
 [ext_resource type="Script" path="res://resources/UI/UI_teste/menu.gd" id="3_m36et"]
 
@@ -16,7 +16,11 @@ grow_vertical = 2
 script = ExtResource("1_8g0o4")
 
 [node name="cena_demo" parent="." instance=ExtResource("1_cc3ki")]
-position = Vector2(-2525, -3)
+position = Vector2(-2525, -20)
+
+[node name="cena_demo2" parent="." instance=ExtResource("1_cc3ki")]
+z_index = -1
+position = Vector2(1320, -20)
 
 [node name="menu" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -39,6 +43,7 @@ theme = ExtResource("3_cmbn0")
 text = " Novo Jogo "
 
 [node name="carregar" type="Button" parent="menu"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_cmbn0")
 text = " Carregar "

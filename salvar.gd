@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var list = get_node("ItemList")
+@onready var list: ItemList = get_node("ItemList")
 var save
 
 func _ready():
@@ -19,6 +19,7 @@ func selecionaSave(index):
 	save["progressao_jogador"]["x"] = Global.player.position.x
 	save["progressao_jogador"]["y"] = Global.player.position.y
 	Save.salvar(save)
+	recarrega()
 
 
 func novoSave():
@@ -28,3 +29,11 @@ func novoSave():
 	save["progressao_jogador"]["x"] = Global.player.position.x
 	save["progressao_jogador"]["y"] = Global.player.position.y
 	Save.salvar(save)
+	recarrega()
+	
+func recarrega():
+	list.clear()
+	var saves = Save.listaSaves()
+	
+	for i in saves:
+		list.add_item("Save {0}".format({"0": i["id"]}))
