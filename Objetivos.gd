@@ -16,24 +16,29 @@ func _ready():
 	arvores_plantadas.set_text("Árvores Plantadas: 0/{total}".format({"total": total_lixo - (total_lixo / 20)}))
 	
 func _physics_process(delta):
-	if lixoColetado < total_lixo - (total_lixo / 10):
-		coleta.set_text("Coleta do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
-	else:
-		coleta.set_text("[color=green][s]-Coleta do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
-	if lixoReciclado < total_lixo - (total_lixo / 10):
-		reciclagem.set_text("Reciclagem do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
-	else:
-		reciclagem.set_text("[color=green][s]-Reciclagem do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
-	if arvoresPlantadas < total_lixo - (total_lixo / 5):
-		arvores_plantadas.set_text("Arvores plantadas: {atual}/{total}".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
-	else:
-		arvores_plantadas.set_text("[color=green][s]-Arvores plantadas: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
-	
+#	if lixoColetado < total_lixo - (total_lixo / 10):
+#		coleta.set_text("Coleta do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
+#	else:
+#		coleta.set_text("[color=green][s]-Coleta do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
+#	if lixoReciclado < total_lixo - (total_lixo / 10):
+#		reciclagem.set_text("Reciclagem do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
+#	else:
+#		reciclagem.set_text("[color=green][s]-Reciclagem do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
+#	if arvoresPlantadas < total_lixo - (total_lixo / 5):
+#		arvores_plantadas.set_text("Arvores plantadas: {atual}/{total}".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
+#	else:
+#		arvores_plantadas.set_text("[color=green][s]-Arvores plantadas: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
+#
 	if lixoColetado >= total_lixo - (total_lixo / 10) and lixoReciclado >= total_lixo - (total_lixo / 10) and arvoresPlantadas >= total_lixo - (total_lixo / 5):
 		var plantas = get_tree().get_nodes_in_group("planta")
 		for i in plantas:
 			i.timer.stop()
 		get_node("/root/Raiz/Final").visible = true
+
+func atualiza():
+	coleta.set_text("Coleta do lixo: 0/{total}".format({"total": total_lixo - (total_lixo / 10)}))
+	reciclagem.set_text("Reciclagem do lixo: 0/{total}".format({"total": total_lixo - (total_lixo / 10)}))
+	arvores_plantadas.set_text("Árvores Plantadas: 0/{total}".format({"total": total_lixo - (total_lixo / 20)}))
 
 func coletar(lixo: int) -> void:
 	lixoColetado += lixo
