@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://8nuh30yoi6iy"]
+[gd_scene load_steps=7 format=3 uid="uid://8nuh30yoi6iy"]
 
 [ext_resource type="Script" path="res://pause.gd" id="1_ygueh"]
 [ext_resource type="PackedScene" uid="uid://x6t6sir7oudu" path="res://salvar.tscn" id="2_rvyx7"]
 [ext_resource type="PackedScene" uid="uid://c64ivekyjuoch" path="res://carregar.tscn" id="3_dehms"]
 [ext_resource type="PackedScene" uid="uid://pge3t88cphpg" path="res://help.tscn" id="4_pmuxx"]
+[ext_resource type="PackedScene" uid="uid://i73qiyyevkgd" path="res://tutorial_text.tscn" id="5_6b6x5"]
 
 [sub_resource type="Theme" id="Theme_4d1wc"]
 Button/font_sizes/font_size = 32
@@ -54,6 +55,11 @@ text = "Voltar"
 layout_mode = 2
 size_flags_vertical = 4
 text = "Ajuda"
+
+[node name="Tutorial" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Tutorial"
 
 [node name="Sair" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -120,18 +126,35 @@ text = "Voltar"
 layer = 128
 
 [node name="Voltar2" type="Button" parent="Help"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -36.0
-offset_right = 67.0
-grow_vertical = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 36.0
+grow_horizontal = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+text = "Voltar"
+
+[node name="Tutorial" parent="." instance=ExtResource("5_6b6x5")]
+visible = false
+
+[node name="Voltar2" type="Button" parent="Tutorial"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 36.0
+grow_horizontal = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 20
 text = "Voltar"
 
 [connection signal="pressed" from="Control/VBoxContainer/Return" to="." method="voltar"]
 [connection signal="pressed" from="Control/VBoxContainer/Ajuda" to="." method="_on_ajuda_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Tutorial" to="." method="tutorial"]
 [connection signal="pressed" from="Control/VBoxContainer/Sair" to="." method="sair"]
 [connection signal="value_changed" from="Control/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Control/VBoxContainer/Salvar" to="." method="salvar"]
@@ -139,3 +162,4 @@ text = "Voltar"
 [connection signal="pressed" from="Salvar/Voltar" to="." method="voltarPause"]
 [connection signal="pressed" from="Carregar/Voltar2" to="." method="voltarPause"]
 [connection signal="pressed" from="Help/Voltar2" to="." method="voltarPause"]
+[connection signal="pressed" from="Tutorial/Voltar2" to="." method="voltarPause"]

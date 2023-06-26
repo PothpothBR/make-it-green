@@ -37,6 +37,7 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 var salvar
 
 @onready var help = get_node("Help")
+@onready var tutorial = get_node("Tutorial")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -120,3 +121,7 @@ func _physics_process(delta):
 
 func voltar_help():
 	help.visible = false
+
+
+func voltar_tutorial():
+	tutorial.visible = false
