@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bgacare7al0ua" path="res://resources/Sprit-Itens.png" id="4_e6lqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svlhh"]
-size = Vector2(20, 47.8571)
+size = Vector2(22, 47.8571)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnjwp"]
 radius = 44.0114
 
-[node name="Arvore" type="Node2D"]
+[node name="Arvore" type="Node2D" groups=["planta"]]
 z_as_relative = false
 script = ExtResource("1_d7tia")
 
@@ -48,7 +48,7 @@ region_rect = Rect2(64, 64, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 4096
-position = Vector2(-1, -11.5)
+position = Vector2(0, -11.5)
 scale = Vector2(1, 1.4)
 shape = SubResource("RectangleShape2D_svlhh")
 

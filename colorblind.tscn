@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5ak61si3lra"]
+
+[ext_resource type="Shader" path="res://colorblind.gdshader" id="1_20bco"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sykn0"]
+shader = ExtResource("1_20bco")
+shader_parameter/mode = 0
+shader_parameter/intensity = 1.0
+
+[node name="colorblind" type="Node2D"]
+material = SubResource("ShaderMaterial_sykn0")

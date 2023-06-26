@@ -1,19 +1,28 @@
 [gd_scene load_steps=13 format=3 uid="uid://pge3t88cphpg"]
 
-[ext_resource type="Texture2D" uid="uid://djlmhcl1jtlik" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Up_Key_Dark.png" id="1_0uua7"]
-[ext_resource type="Texture2D" uid="uid://ouhigpuhc2df" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Left_Key_Dark.png" id="2_werjk"]
-[ext_resource type="Texture2D" uid="uid://ce3yiqxersv1p" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Right_Key_Dark.png" id="3_jr20u"]
-[ext_resource type="Texture2D" uid="uid://bxg1eymyh8yid" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Down_Key_Dark.png" id="4_3lo2u"]
-[ext_resource type="Texture2D" uid="uid://cstm61xuvsp2r" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/E_Key_Dark.png" id="5_moihr"]
-[ext_resource type="Texture2D" uid="uid://pwiphak0t0gy" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/L_Key_Dark.png" id="6_c32r3"]
-[ext_resource type="Texture2D" uid="uid://cw4k4mjgvgb8x" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/I_Key_Dark.png" id="7_akh6l"]
-[ext_resource type="Texture2D" uid="uid://1aj6suribrei" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Esc_Key_Dark.png" id="8_13mbs"]
-[ext_resource type="Texture2D" uid="uid://2tc8jc7cfgq3" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/W_Key_Dark.png" id="8_85uu5"]
-[ext_resource type="Texture2D" uid="uid://b66wb4j2tsevk" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/A_Key_Dark.png" id="9_7twmg"]
-[ext_resource type="Texture2D" uid="uid://dv2y6shx6g7aa" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/S_Key_Dark.png" id="10_lr881"]
-[ext_resource type="Texture2D" uid="uid://bpxwu7yrw7jmx" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/D_Key_Dark.png" id="11_88os7"]
+[ext_resource type="Texture2D" uid="uid://803o134ra8yj" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Up_Key_Dark.png" id="1_0uua7"]
+[ext_resource type="Texture2D" uid="uid://lmr7qo7ouyru" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Left_Key_Dark.png" id="2_werjk"]
+[ext_resource type="Texture2D" uid="uid://7ih7saoqouom" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Right_Key_Dark.png" id="3_jr20u"]
+[ext_resource type="Texture2D" uid="uid://c70vhiy7m6c2l" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Arrow_Down_Key_Dark.png" id="4_3lo2u"]
+[ext_resource type="Texture2D" uid="uid://cn3w1ouwktle2" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/E_Key_Dark.png" id="5_moihr"]
+[ext_resource type="Texture2D" uid="uid://d2fsbq3i46v12" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/L_Key_Dark.png" id="6_c32r3"]
+[ext_resource type="Texture2D" uid="uid://bmhabqa8rmfwe" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/I_Key_Dark.png" id="7_akh6l"]
+[ext_resource type="Texture2D" uid="uid://xqutj2bf61lq" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/Esc_Key_Dark.png" id="8_13mbs"]
+[ext_resource type="Texture2D" uid="uid://diu0uwb3v3seh" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/W_Key_Dark.png" id="8_85uu5"]
+[ext_resource type="Texture2D" uid="uid://bl24pvir1ueai" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/A_Key_Dark.png" id="9_7twmg"]
+[ext_resource type="Texture2D" uid="uid://dcney456oqdd" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/S_Key_Dark.png" id="10_lr881"]
+[ext_resource type="Texture2D" uid="uid://b6x0ndvq1l5rx" path="res://resources/UI/Inputs/Keyboard & Mouse/Dark/D_Key_Dark.png" id="11_88os7"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Help" type="CanvasLayer"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0823529, 0.0705882, 0.0627451, 0.776471)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -26,126 +35,163 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="up" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
-position = Vector2(71, 70)
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="up" type="Sprite2D" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+position = Vector2(60, 52)
 texture = ExtResource("1_0uua7")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/up"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para cima"
+horizontal_alignment = 1
 
-[node name="left" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
-position = Vector2(71, 232)
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="left" type="Sprite2D" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+position = Vector2(60, 52)
 texture = ExtResource("2_werjk")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/left"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para esquerda"
 
-[node name="right" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
-position = Vector2(72, 311)
-texture = ExtResource("3_jr20u")
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/right"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
-text = "Andar para direita"
-
-[node name="down" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
-position = Vector2(73, 151)
+[node name="down" type="Sprite2D" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+position = Vector2(60, 52)
 texture = ExtResource("4_3lo2u")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/down"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para baixo"
 
-[node name="E" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
-position = Vector2(73, 390)
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="right" type="Sprite2D" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+position = Vector2(60, 52)
+texture = ExtResource("3_jr20u")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Andar para direita"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="E" type="Sprite2D" parent="HBoxContainer/VBoxContainer/HBoxContainer5"]
+position = Vector2(60, 52)
 texture = ExtResource("5_moihr")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/E"]
-offset_left = 60.0
-offset_right = 110.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Botão de interação com o lixo e com a lixeira"
 
-[node name="L" type="Sprite2D" parent="HBoxContainer/VBoxContainer"]
-position = Vector2(74, 471)
+[node name="HBoxContainer6" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="L" type="Sprite2D" parent="HBoxContainer/VBoxContainer/HBoxContainer6"]
+position = Vector2(60, 52)
 texture = ExtResource("6_c32r3")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/L"]
-offset_left = 60.0
-offset_right = 110.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Botão da loja"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="esc" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
-position = Vector2(84, 67)
-texture = ExtResource("8_13mbs")
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/esc"]
-offset_left = 60.0
-offset_right = 110.0
-offset_bottom = 23.0
-text = "Pausa"
-
-[node name="W" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
-position = Vector2(84, 146)
+[node name="W" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/HBoxContainer2"]
+position = Vector2(60, 52)
 texture = ExtResource("8_85uu5")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/W"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para cima"
 
-[node name="A" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
-position = Vector2(84, 227)
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="A" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/HBoxContainer3"]
+position = Vector2(60, 52)
 texture = ExtResource("9_7twmg")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/A"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para esquerda"
 
-[node name="S" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
-position = Vector2(86, 307)
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="S" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/HBoxContainer4"]
+position = Vector2(60, 52)
 texture = ExtResource("10_lr881")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/S"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para baixo"
 
-[node name="D" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
-position = Vector2(87, 387)
+[node name="HBoxContainer5" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="D" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/HBoxContainer5"]
+position = Vector2(60, 52)
 texture = ExtResource("11_88os7")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/D"]
-offset_left = 60.0
-offset_right = 100.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Andar para direita"
 
-[node name="I" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
-position = Vector2(87, 472)
+[node name="HBoxContainer6" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="I" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/HBoxContainer6"]
+position = Vector2(60, 52)
 texture = ExtResource("7_akh6l")
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/I"]
-offset_left = 60.0
-offset_right = 110.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 6
 text = "Inventario"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="esc" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/HBoxContainer"]
+position = Vector2(60, 52)
+texture = ExtResource("8_13mbs")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Pausa"

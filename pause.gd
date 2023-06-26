@@ -7,6 +7,7 @@ const SQL = preload("res://sqlite_teste.gd")
 @onready var carregarScn = get_node("Carregar")
 @onready var voltarBtn = get_node("Voltar")
 @onready var menu = get_node("Control")
+@onready var help = get_node("Help")
 
 var player
 var gameState
@@ -34,6 +35,7 @@ func salvar():
 func voltarPause():
 	salvarScn.visible = false
 	carregarScn.visible = false
+	help.visible = false
 	menu.visible = true
 
 
@@ -41,3 +43,12 @@ func carregar():
 	menu.visible = false
 	carregarScn.recarrega()
 	carregarScn.visible = true
+
+
+func _on_h_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(0, linear_to_db(value))
+
+
+func _on_ajuda_pressed():
+	menu.visible = false
+	help.visible = true

@@ -8,34 +8,55 @@ var lixoColetado: int = 0
 var lixoReciclado: int = 0
 var arvoresPlantadas: int = 0
 
+var total_lixo = 0
+
 func _ready():
-	coleta.set_text("Coleta do lixo: 0/10")
-	reciclagem.set_text("Reciclagem do lixo: 0/10")
-	area_limpa.set_text("Limpeza da Área: 0/10")
-	arvores_plantadas.set_text("Árvores Plantadas: 0/10")
+	coleta.set_text("Coleta do lixo: 0/{total}".format({"total": total_lixo - (total_lixo / 10)}))
+	reciclagem.set_text("Reciclagem do lixo: 0/{total}".format({"total": total_lixo - (total_lixo / 10)}))
+	arvores_plantadas.set_text("Árvores Plantadas: 0/{total}".format({"total": total_lixo - (total_lixo / 20)}))
+	
+func _physics_process(delta):
+	if lixoColetado < total_lixo - (total_lixo / 10):
+		coleta.set_text("Coleta do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
+	else:
+		coleta.set_text("[color=green][s]-Coleta do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
+	if lixoReciclado < total_lixo - (total_lixo / 10):
+		reciclagem.set_text("Reciclagem do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
+	else:
+		reciclagem.set_text("[color=green][s]-Reciclagem do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
+	if arvoresPlantadas < total_lixo - (total_lixo / 5):
+		arvores_plantadas.set_text("Arvores plantadas: {atual}/{total}".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
+	else:
+		arvores_plantadas.set_text("[color=green][s]-Arvores plantadas: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
+	
+	if lixoColetado >= total_lixo - (total_lixo / 10) and lixoReciclado >= total_lixo - (total_lixo / 10) and arvoresPlantadas >= total_lixo - (total_lixo / 5):
+		var plantas = get_tree().get_nodes_in_group("planta")
+		for i in plantas:
+			i.timer.stop()
+		get_node("/root/Raiz/Final").visible = true
 
 func coletar(lixo: int) -> void:
 	lixoColetado += lixo
-	if lixoColetado < 10:
-		coleta.set_text("Coleta do lixo: {total}/10".format({"total": lixoColetado}))
+	if lixoColetado < total_lixo - (total_lixo / 10):
+		coleta.set_text("Coleta do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
 	else:
-		coleta.set_text("[color=green][s]-Coleta do Lixo: {total}/10[/s][/color]".format({"total": lixoColetado}))
+		coleta.set_text("[color=green][s]-Coleta do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoColetado}))
 	limpar()
 
 func reciclar(lixo: int) -> void:
 	lixoReciclado += lixo
-	if lixoReciclado < 10:
-		reciclagem.set_text("Reciclagem do lixo: {total}/10".format({"total": lixoReciclado}))
+	if lixoReciclado < total_lixo - (total_lixo / 10):
+		reciclagem.set_text("Reciclagem do lixo: {atual}/{total}".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
 	else:
-		reciclagem.set_text("[color=green][s]-Reciclagem do Lixo: {total}/10[/s][/color]".format({"total": lixoReciclado}))
+		reciclagem.set_text("[color=green][s]-Reciclagem do Lixo: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 10), "atual": lixoReciclado}))
 	limpar()
 
 func plantar(arvore: int) -> void:
 	arvoresPlantadas += arvore
-	if arvoresPlantadas < 10:
-		arvores_plantadas.set_text("Arvores plantadas: {total}/10".format({"total": arvoresPlantadas}))
+	if arvoresPlantadas < total_lixo - (total_lixo / 5):
+		arvores_plantadas.set_text("Arvores plantadas: {atual}/{total}".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
 	else:
-		arvores_plantadas.set_text("[color=green][s]-Arvores plantadas: {total}/10[/s][/color]".format({"total": arvoresPlantadas}))
+		arvores_plantadas.set_text("[color=green][s]-Arvores plantadas: {atual}/{total}[/s][/color]".format({"total": total_lixo - (total_lixo / 5), "atual": arvoresPlantadas}))
 	limpar()
 
 func limpar() -> void:
