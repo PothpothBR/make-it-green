@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://i73qiyyevkgd"]
+
+[node name="Tutorial" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Comprar Itens:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]Clique em um item na loja para comprá-lo. O item comprado será adicionado à sua mochila."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Plantar Árvores:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]Posicione-se no local onde deseja plantar uma árvore.
+Abra sua mochila e clique no tipo de semente desejada (árvore ou arbusto).
+A semente será plantada no local selecionado."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Cultivar:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]Para adubar uma árvore, posicione-se próximo a ela.
+Abra sua mochila e clique no adubo. Se você não tiver adubo, pode comprá-lo na loja.
+Para regar uma árvore, posicione-se próximo a ela.
+Abra sua mochila e clique no regador. Se você não tiver um regador, pode comprá-lo na loja."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Coletar Lixo:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]Aproxime-se do lixo e, virado em direção a ele, pressione a tecla \"E\".
+O lixo coletado pode ser reciclado na lixeira, pressionando a tecla \"E\"."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Crescimento de Plantas:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]Ao plantar uma semente, ela precisará ser regada para crescer.
+Você pode pular um estágio de crescimento adubando a planta.
+Tanto o regador quanto o adubo podem ser comprados na loja.
+O regador permite que a planta evolua e tem uso infinito.
+O adubo é um item precioso que permite pular um estágio de crescimento e tem uso limitado."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Metas e Pontuação:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]O objetivo principal do jogo é cumprir as metas de plantio e coleta para limpar o mapa.
+Ao cumprir os objetivos, você ganha pontos.
+Os pontos podem ser utilizados na loja para comprar uma mochila melhor assim como  itens que serão essenciais em sua jornada."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Loja:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[indent][indent]Abra a loja pressionando a tecla \"L\".
+Na loja, você encontrará sementes de árvore e arbusto, regadores, adubo e quatro níveis de mochila diferentes."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2

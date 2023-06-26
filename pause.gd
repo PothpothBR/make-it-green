@@ -8,6 +8,7 @@ const SQL = preload("res://sqlite_teste.gd")
 @onready var voltarBtn = get_node("Voltar")
 @onready var menu = get_node("Control")
 @onready var help = get_node("Help")
+@onready var tutorialScn = get_node("Tutorial")
 
 var player
 var gameState
@@ -36,6 +37,7 @@ func voltarPause():
 	salvarScn.visible = false
 	carregarScn.visible = false
 	help.visible = false
+	tutorialScn.visible = false
 	menu.visible = true
 
 
@@ -52,3 +54,8 @@ func _on_h_slider_value_changed(value):
 func _on_ajuda_pressed():
 	menu.visible = false
 	help.visible = true
+
+
+func tutorial():
+	menu.visible = false
+	tutorialScn.visible = true

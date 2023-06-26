@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://caqeo1s5t2t8p"]
+[gd_scene load_steps=17 format=3 uid="uid://caqeo1s5t2t8p"]
 
 [ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
 [ext_resource type="PackedScene" uid="uid://ciushfkc35npk" path="res://mapa.tscn" id="2_74k67"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" path="res://colorblind.gdshader" id="11_lci08"]
 [ext_resource type="PackedScene" uid="uid://dv6xv0xofti3c" path="res://final.tscn" id="12_tjmbq"]
 [ext_resource type="PackedScene" uid="uid://pge3t88cphpg" path="res://help.tscn" id="13_pfema"]
+[ext_resource type="PackedScene" uid="uid://i73qiyyevkgd" path="res://tutorial_text.tscn" id="14_p3ivs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p6d3s"]
 shader = ExtResource("11_lci08")
@@ -64,12 +65,26 @@ autoplay = true
 visible = true
 
 [node name="Button" type="Button" parent="Help"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -8.0
-offset_right = 8.0
-grow_vertical = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_right = 27.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Voltar"
+
+[node name="Tutorial" parent="." instance=ExtResource("14_p3ivs")]
+
+[node name="Button" type="Button" parent="Tutorial"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_right = 27.5
+offset_bottom = 31.0
+grow_horizontal = 2
 text = "Voltar"
 
 [connection signal="pressed" from="Help/Button" to="." method="voltar_help"]
+[connection signal="pressed" from="Tutorial/Button" to="." method="voltar_tutorial"]
