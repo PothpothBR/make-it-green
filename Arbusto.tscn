@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://Arbusto.gd" id="1_ytvwu"]
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="2_stsr0"]
-[ext_resource type="Texture2D" uid="uid://bgacare7al0ua" path="res://resources/Sprit-Itens.png" id="3_tj3gq"]
+[ext_resource type="Texture2D" uid="uid://7a61vuuplmhu" path="res://resources/Sprit-Itens.png" id="3_tj3gq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqwbw"]
-radius = 11.0
-height = 48.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kb8c"]
+size = Vector2(22, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ovbd"]
 radius = 46.0109
@@ -42,7 +41,7 @@ region_rect = Rect2(128, 0, 32, 32)
 z_index = 4096
 position = Vector2(-1, -13)
 scale = Vector2(1, 1.4)
-shape = SubResource("CapsuleShape2D_sqwbw")
+shape = SubResource("RectangleShape2D_7kb8c")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

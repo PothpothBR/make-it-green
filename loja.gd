@@ -46,8 +46,8 @@ func on_comprar_semente_arbusto():
 		adicionar_item(128, 0, 2)
 	
 func on_comprar_regador():
-	if (Pontos.pontos >= 5):
-		Pontos.remover(5)
+	if (Pontos.pontos >= 35):
+		Pontos.remover(35)
 		adicionar_item(64, 0, 3)
 		inventario.temRegador = true
 		regador.visible = false
