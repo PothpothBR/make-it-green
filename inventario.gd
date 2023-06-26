@@ -8,6 +8,9 @@ var raiz
 var tamanhoSementes = 10
 var tamanho = 0
 var temRegador = false
+var gameState
+
+@onready var espaco: RichTextLabel = get_node("espaco_inventario")
 
 @onready var arrSementes: Array[Dictionary] = [
 	{
@@ -31,8 +34,9 @@ var temRegador = false
 
 func _ready():
 	pass
-
-var gameState
+	
+func _physics_process(delta):
+	espaco.set_text("Espaço Livre: {tamanho}".format({"tamanho": tamanhoSementes}))
 
 func addItem(lixo: Node2D) -> void:
 	lixos.add_item(lixo.to_string())
@@ -58,4 +62,5 @@ func _on_sementes_item_clicked(index, at_position, mouse_button_index):
 	player.animacao.stop()
 	player.updateHUD()
 	tamanho -= 1
-	sementes.remove_item(index)
+	if id != 3:
+		sementes.remove_item(index)

@@ -36,6 +36,8 @@ const CenaLixo: PackedScene = preload("res://lixo.tscn")
 @onready var Pontos = get_node("HUD/Pontos")
 var salvar
 
+@onready var help = get_node("Help")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var contagemLixo = randi_range(geracaoLixo-modGeracaoLixo, geracaoLixo+modGeracaoLixo)
@@ -54,7 +56,7 @@ func _ready():
 	Pontos.adicionar(save["progressao_jogador"]["points"])
 	player.position = Vector2(save["progressao_jogador"]["x"], save["progressao_jogador"]["y"])
 	
-	gerarLixo(contagemLixo, 119, 63)
+	gerarLixo(contagemLixo, 100, 100)
 	player.apontaLixoPerto()
 #	lixoPerto(player)
 	
@@ -87,6 +89,8 @@ func _ready():
 	loja.inventarioItens = inventario.get_node('VBoxContainer/Sementes')
 	loja.inventario = inventario
 	
+	objetivos.total_lixo = contagemLixo
+	
 	salvar.save = save
 	musica.play()
 
@@ -111,3 +115,7 @@ func _physics_process(delta):
 #	if Input.is_action_just_pressed("inventory") or Input.is_action_just_pressed("temp"):
 #		for i in hud.get_children():
 #			i.visible = !i.visible
+
+
+func voltar_help():
+	help.visible = false

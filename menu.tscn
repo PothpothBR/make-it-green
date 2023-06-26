@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://drvh0o8kfebw"]
+[gd_scene load_steps=7 format=3 uid="uid://drvh0o8kfebw"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_8g0o4"]
 [ext_resource type="PackedScene" uid="uid://boeqjmmq8g3mm" path="res://cena_demo.tscn" id="1_cc3ki"]
 [ext_resource type="Texture2D" uid="uid://dlmdb5iu7wpu1" path="res://resources/makeitgreenlogo.png" id="3_8b6ye"]
 [ext_resource type="Theme" uid="uid://smvv41fgogvy" path="res://resources/UI/UI_teste/theme_button.tres" id="3_cmbn0"]
 [ext_resource type="Script" path="res://resources/UI/UI_teste/menu.gd" id="3_m36et"]
+[ext_resource type="AudioStream" uid="uid://bxiotq0o5wpeu" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="6_avisc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -57,6 +58,10 @@ text = " Sair "
 position = Vector2(46.5, -85.5)
 scale = Vector2(0.368108, 0.157991)
 texture = ExtResource("3_8b6ye")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_avisc")
+autoplay = true
 
 [connection signal="pressed" from="menu/novo_jogo" to="menu" method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="menu/carregar" to="." method="BotaoCarregar"]

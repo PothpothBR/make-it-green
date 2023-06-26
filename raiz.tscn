@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://caqeo1s5t2t8p"]
+[gd_scene load_steps=16 format=3 uid="uid://caqeo1s5t2t8p"]
 
 [ext_resource type="Script" path="res://Raiz.gd" id="1_s73g7"]
 [ext_resource type="PackedScene" uid="uid://ciushfkc35npk" path="res://mapa.tscn" id="2_74k67"]
@@ -10,11 +10,25 @@
 [ext_resource type="PackedScene" uid="uid://x6t6sir7oudu" path="res://salvar.tscn" id="8_b12ao"]
 [ext_resource type="PackedScene" uid="uid://dcc5m2tpyo24k" path="res://hud.tscn" id="8_is312"]
 [ext_resource type="AudioStream" uid="uid://bxiotq0o5wpeu" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
+[ext_resource type="Shader" path="res://colorblind.gdshader" id="11_lci08"]
+[ext_resource type="PackedScene" uid="uid://dv6xv0xofti3c" path="res://final.tscn" id="12_tjmbq"]
+[ext_resource type="PackedScene" uid="uid://pge3t88cphpg" path="res://help.tscn" id="13_pfema"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6d3s"]
+shader = ExtResource("11_lci08")
+shader_parameter/mode = 2
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gjes"]
+shader = ExtResource("11_lci08")
+shader_parameter/mode = 2
+shader_parameter/intensity = 1.0
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
 
 [node name="mapa" parent="." instance=ExtResource("2_74k67")]
+material = SubResource("ShaderMaterial_p6d3s")
 
 [node name="Lixeira" parent="." instance=ExtResource("6_535so")]
 texture_filter = 1
@@ -23,6 +37,7 @@ scale = Vector2(4, 4)
 
 [node name="Personagem" parent="." instance=ExtResource("3_egu52")]
 z_as_relative = true
+material = SubResource("ShaderMaterial_8gjes")
 position = Vector2(284, 249)
 
 [node name="HUD" parent="." instance=ExtResource("8_is312")]
@@ -41,4 +56,19 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_6g1qf")
-volume_db = -30.0
+
+[node name="Final" parent="." instance=ExtResource("12_tjmbq")]
+
+[node name="Help" parent="." instance=ExtResource("13_pfema")]
+visible = true
+
+[node name="Button" type="Button" parent="Help"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+text = "Voltar"
+
+[connection signal="pressed" from="Help/Button" to="." method="voltar_help"]

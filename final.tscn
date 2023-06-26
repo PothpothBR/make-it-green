@@ -1,6 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://dv6xv0xofti3c"]
+[gd_scene load_steps=58 format=3 uid="uid://dv6xv0xofti3c"]
 
-[ext_resource type="Texture2D" uid="uid://q2uk8pl2c6h4" path="res://resources/Tiles/world.png" id="1_y04ed"]
+[ext_resource type="Script" path="res://final.gd" id="1_tcn6r"]
+[ext_resource type="Texture2D" uid="uid://oy2vlssvd707" path="res://resources/Tiles/world.png" id="1_y04ed"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2eee"]
 atlas = ExtResource("1_y04ed")
@@ -360,7 +361,29 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csp2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqk0b"]
+bg_color = Color(0.6, 0.6, 0.6, 0.329412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5j0a"]
+
+[sub_resource type="Theme" id="Theme_osjll"]
+Button/styles/hover = SubResource("StyleBoxFlat_csp2n")
+Button/styles/normal = SubResource("StyleBoxFlat_xqk0b")
+Button/styles/pressed = SubResource("StyleBoxFlat_n5j0a")
+
+[node name="Final" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_tcn6r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -384,27 +407,36 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
+offset_top = -90.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_vertical = 3
 
-[node name="parabenização_pontuação" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-bbcode_enabled = true
-text = "Parabens, Voce finalizou o Jogo com a pontuação:"
-fit_content = true
+size_flags_horizontal = 4
+theme = SubResource("Theme_osjll")
+theme_override_font_sizes/font_size = 20
+text = "Voltar ao menu"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 48.0
 grow_horizontal = 2
+size_flags_vertical = 3
 
 [node name="insentivo" type="RichTextLabel" parent="VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Muito bom você conseguiu finalizar o jogo, porem não desista a luta pela preservação da mâe natureza nunca para."
 fit_content = true
+autowrap_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

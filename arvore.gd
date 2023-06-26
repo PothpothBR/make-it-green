@@ -8,6 +8,7 @@ var semente: bool = true
 var muda: bool = false
 @onready var Pontos = get_node("/root/Raiz/HUD/Pontos")
 @onready var col = get_node("StaticBody2D/Collision")
+@onready var timer = get_node("Timer")
 
 func _ready():
 	Pontos.adicionar(4)
@@ -27,7 +28,6 @@ func _on_timer_timeout():
 		semente = false
 		get_node("Semente").visible = false
 		get_node("Muda").visible = true
-		var timer = get_node("Timer")
 		timer.stop()
 		timer.set_wait_time(15)
 		timer.start()
@@ -42,7 +42,6 @@ func _on_timer_timeout():
 func regar():
 	if !regado:
 		regado = true
-		var timer = get_node("Timer")
 		timer.set_wait_time(5)
 		timer.start()
 

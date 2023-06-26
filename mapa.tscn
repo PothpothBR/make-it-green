@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciushfkc35npk"]
+[gd_scene load_steps=4 format=3 uid="uid://ciushfkc35npk"]
 
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_0oyba"]
 [ext_resource type="Script" path="res://mapa.gd" id="1_y7ggt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd411"]
 
 [node name="mapa" type="Node2D"]
 script = ExtResource("1_y7ggt")
@@ -12,3 +14,32 @@ texture_repeat = 1
 tile_set = ExtResource("1_0oyba")
 cell_quadrant_size = 32
 format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-10, 1600)
+scale = Vector2(1, 160)
+shape = SubResource("RectangleShape2D_jd411")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 3200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1600, 10)
+scale = Vector2(160, 1)
+shape = SubResource("RectangleShape2D_jd411")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(3210, 1600)
+scale = Vector2(1, 160)
+shape = SubResource("RectangleShape2D_jd411")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1600, 0)
+scale = Vector2(160, 1)
+shape = SubResource("RectangleShape2D_jd411")
