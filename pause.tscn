@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8nuh30yoi6iy"]
+[gd_scene load_steps=11 format=3 uid="uid://8nuh30yoi6iy"]
 
 [ext_resource type="Script" path="res://pause.gd" id="1_ygueh"]
 [ext_resource type="PackedScene" uid="uid://x6t6sir7oudu" path="res://salvar.tscn" id="2_rvyx7"]
@@ -8,6 +8,18 @@
 
 [sub_resource type="Theme" id="Theme_4d1wc"]
 Button/font_sizes/font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scn0o"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_t64fj"]
+Button/styles/normal = SubResource("StyleBoxFlat_scn0o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5op5a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_7x2k6"]
+Button/styles/normal = SubResource("StyleBoxFlat_5op5a")
 
 [node name="Pause" type="CanvasLayer"]
 visible = false
@@ -134,6 +146,7 @@ offset_right = 33.5
 offset_bottom = 36.0
 grow_horizontal = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_t64fj")
 theme_override_font_sizes/font_size = 20
 text = "Voltar"
 
@@ -149,6 +162,7 @@ offset_right = 33.5
 offset_bottom = 36.0
 grow_horizontal = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_7x2k6")
 theme_override_font_sizes/font_size = 20
 text = "Voltar"
 
