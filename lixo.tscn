@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cynuhdl7bt1y4"]
 
 [ext_resource type="Script" path="res://Lixo.gd" id="1_4y11w"]
-[ext_resource type="Texture2D" uid="uid://chrpk0iy2tul4" path="res://resources/spritesheet-lixo.png" id="2_en1g7"]
-[ext_resource type="Texture2D" uid="uid://bfbspscfd3qpq" path="res://resources/021-Light01.png" id="4_nkjwt"]
+[ext_resource type="Texture2D" uid="uid://e6vbusld1ao6" path="res://resources/spritesheet-lixo.png" id="2_en1g7"]
+[ext_resource type="Texture2D" uid="uid://0k4ndkx5163a" path="res://resources/021-Light01.png" id="4_nkjwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b736"]
 size = Vector2(32, 32)

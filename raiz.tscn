@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dgq0p3xrufq77" path="res://loja.tscn" id="7_gawtd"]
 [ext_resource type="PackedScene" uid="uid://x6t6sir7oudu" path="res://salvar.tscn" id="8_b12ao"]
 [ext_resource type="PackedScene" uid="uid://dcc5m2tpyo24k" path="res://hud.tscn" id="8_is312"]
-[ext_resource type="AudioStream" uid="uid://bqo0qlhg6nyp1" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
+[ext_resource type="AudioStream" uid="uid://bxiotq0o5wpeu" path="res://resources/Sound/Music/Gameplay_Fixed.mp3" id="10_6g1qf"]
 
 [node name="Raiz" type="Node"]
 script = ExtResource("1_s73g7")
@@ -42,4 +42,3 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_6g1qf")
 volume_db = -30.0
-autoplay = true

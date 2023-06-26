@@ -4,6 +4,7 @@ const SQL = preload("res://sqlite_teste.gd")
 
 @onready var pause = get_node(".")
 @onready var salvarScn = get_node("Salvar")
+@onready var carregarScn = get_node("Carregar")
 @onready var voltarBtn = get_node("Voltar")
 @onready var menu = get_node("Control")
 
@@ -32,4 +33,11 @@ func salvar():
 
 func voltarPause():
 	salvarScn.visible = false
+	carregarScn.visible = false
 	menu.visible = true
+
+
+func carregar():
+	menu.visible = false
+	carregarScn.recarrega()
+	carregarScn.visible = true

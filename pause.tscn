@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8nuh30yoi6iy"]
+[gd_scene load_steps=5 format=3 uid="uid://8nuh30yoi6iy"]
 
 [ext_resource type="Script" path="res://pause.gd" id="1_ygueh"]
 [ext_resource type="PackedScene" uid="uid://x6t6sir7oudu" path="res://salvar.tscn" id="2_rvyx7"]
+[ext_resource type="PackedScene" uid="uid://c64ivekyjuoch" path="res://carregar.tscn" id="3_dehms"]
 
 [sub_resource type="Theme" id="Theme_4d1wc"]
 Button/font_sizes/font_size = 32
@@ -46,11 +47,17 @@ theme_override_constants/separation = 25
 [node name="Return" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-text = "Return"
+text = "Voltar"
 
 [node name="Salvar" type="Button" parent="Control/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Salvar"
+
+[node name="Carregar" type="Button" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Carregar"
 
 [node name="Sair" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -72,7 +79,24 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 20
 text = "Voltar"
 
+[node name="Carregar" parent="." instance=ExtResource("3_dehms")]
+layer = 128
+visible = false
+
+[node name="Voltar2" type="Button" parent="Carregar"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+offset_right = 67.0
+grow_vertical = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+text = "Voltar"
+
 [connection signal="pressed" from="Control/VBoxContainer/Return" to="." method="voltar"]
 [connection signal="pressed" from="Control/VBoxContainer/Salvar" to="." method="salvar"]
+[connection signal="pressed" from="Control/VBoxContainer/Carregar" to="." method="carregar"]
 [connection signal="pressed" from="Control/VBoxContainer/Sair" to="." method="sair"]
 [connection signal="pressed" from="Salvar/Voltar" to="." method="voltarPause"]
+[connection signal="pressed" from="Carregar/Voltar2" to="." method="voltarPause"]
