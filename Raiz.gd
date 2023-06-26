@@ -90,6 +90,7 @@ func _ready():
 	loja.inventario = inventario
 	
 	objetivos.total_lixo = contagemLixo
+	objetivos.atualiza()
 	
 	salvar.save = save
 	musica.play()
