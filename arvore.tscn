@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://arvore.gd" id="1_d7tia"]
 [ext_resource type="TileSet" uid="uid://b0sdxwuc1fn3y" path="res://tileset_naturesa.tres" id="1_hs4lj"]
-[ext_resource type="Texture2D" uid="uid://dtti1rpum7vfj" path="res://resources/Arvorezinha2.png" id="3_64ri7"]
-[ext_resource type="Texture2D" uid="uid://bgacare7al0ua" path="res://resources/Sprit-Itens.png" id="4_e6lqt"]
+[ext_resource type="Texture2D" uid="uid://inclqiu147o4" path="res://resources/Arvorezinha2.png" id="3_64ri7"]
+[ext_resource type="Texture2D" uid="uid://7a61vuuplmhu" path="res://resources/Sprit-Itens.png" id="4_e6lqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svlhh"]
 size = Vector2(22, 47.8571)

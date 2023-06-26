@@ -84,14 +84,14 @@ func plantarArvore() -> bool:
 	var arve = Arvore.instantiate()
 	arve.position = self.position
 	get_node("/root").add_child(arve)
-	objetivos.plantar(1)
+	objetivos.plantarArvore(1)
 	return true
 	
 func plantarArbusto() -> bool:
 	var arbo = Arbusto.instantiate()
 	arbo.position = self.position
 	get_node("/root").add_child(arbo)
-	objetivos.plantar(1)
+	objetivos.plantarArbusto(1)
 	return true
 	
 func regar():

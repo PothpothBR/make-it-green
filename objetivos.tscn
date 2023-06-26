@@ -59,6 +59,15 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="plantar_arbusto" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_nwscr")
+bbcode_enabled = true
+text = "Plantar arbustos:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="limpar_area" type="RichTextLabel" parent="Control/VBoxContainer"]
 visible = false
 layout_mode = 2
